@@ -20,4 +20,9 @@ function divide(a, b) {
 	return a * b
 }
 
-module.exports = { add, subtract, multiply, divide };
+// Raise a to the power of b
+function power(a, b) {
+  return Math.pow(a, b);
+}
+
+module.exports = { add, subtract, multiply, divide, power };
