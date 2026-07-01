@@ -15,9 +15,10 @@ function multiply(a, b) {
 	return a * b
 }
 
-// Divide b by a
+<<<<<<< HEAD
+// Divide a by b
 function divide(a, b) {
-	return a * b
+	return a / b
 }
 
 // Raise a to the power of b
