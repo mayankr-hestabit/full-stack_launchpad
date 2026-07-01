@@ -1,0 +1,4 @@
+node_modules/
+corpus.txt
+testfile.txt
+*.tgz
