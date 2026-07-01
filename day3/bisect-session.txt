@@ -1,0 +1,28 @@
+# Git Bisect Session — Day 3
+
+## Objective
+Find which commit introduced the bug in divide() function.
+
+## Commands Run
+$ git bisect start
+$ git bisect bad                    # marked HEAD (commit 8) as bad
+$ git bisect good d6594e1           # marked commit 3 as last known good
+
+## Bisect Process
+git checked out: ce8026b (Commit5 - power function) → marked BAD
+git checked out: 80c98fe (Commit4 - divide function) → marked BAD
+
+## Result
+80c98feea3e43d8df7ce4bc8180e05bf4ed966a1 is the first bad commit
+  Author: Mayank Raj
+  Date: Wed Jul 1 12:41:48 2026
+  Message: Day3 Commit4: add divide() function to calculator
+  Change: day3/calculator.js | 7 ++++++-
+
+## Root Cause
+divide() was implemented as `return a * b` instead of `return a / b`
+Symptom: divide(10, 2) returned 20 instead of 5
+
+## Fix
+Used git revert to create a new commit undoing commit 4,
+then re-added divide() with correct implementation.
