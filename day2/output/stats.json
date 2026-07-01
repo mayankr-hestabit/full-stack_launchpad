@@ -1,0 +1,63 @@
+{
+  "timestamp": "2026-07-01T03:19:36.577Z",
+  "file": "corpus.txt",
+  "filters": {
+    "minLen": 7,
+    "topN": 10,
+    "uniqueOnly": true
+  },
+  "stats": {
+    "totalWords": 25,
+    "totalUnique": 25,
+    "longestWord": {
+      "word": "variable",
+      "length": 8
+    },
+    "shortestWord": {
+      "word": "network",
+      "length": 7
+    },
+    "topWords": [
+      {
+        "word": "dynamic",
+        "count": 3784
+      },
+      {
+        "word": "integer",
+        "count": 3774
+      },
+      {
+        "word": "boolean",
+        "count": 3762
+      },
+      {
+        "word": "elastic",
+        "count": 3759
+      },
+      {
+        "word": "cluster",
+        "count": 3752
+      },
+      {
+        "word": "package",
+        "count": 3739
+      },
+      {
+        "word": "session",
+        "count": 3730
+      },
+      {
+        "word": "handler",
+        "count": 3723
+      },
+      {
+        "word": "operate",
+        "count": 3721
+      },
+      {
+        "word": "webpack",
+        "count": 3720
+      }
+    ]
+  }
+}
