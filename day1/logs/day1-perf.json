@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-06-30T09:01:47.018Z",
+  "fileSizeBytes": 52428800,
+  "results": [
+    {
+      "method": "buffer",
+      "durationMs": 533.6,
+      "memBeforeMB": 42.38,
+      "memAfterMB": 92.5,
+      "bytesRead": 52428800
+    },
+    {
+      "method": "stream",
+      "durationMs": 252.79,
+      "memBeforeMB": 92.75,
+      "memAfterMB": 71.99,
+      "bytesRead": 52428800
+    }
+  ]
+}
