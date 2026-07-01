@@ -1,0 +1,154 @@
+{
+  "timestamp": "2026-07-01T05:55:52.291Z",
+  "file": "./corpus.txt",
+  "filters": {
+    "minLen": 5,
+    "topN": 10
+  },
+  "results": [
+    {
+      "concurrency": 1,
+      "durationMs": 264.05,
+      "totalWords": 200000,
+      "uniqueWords": 54,
+      "topWords": [
+        {
+          "word": "worker",
+          "count": 3825
+        },
+        {
+          "word": "engine",
+          "count": 3810
+        },
+        {
+          "word": "yellow",
+          "count": 3799
+        },
+        {
+          "word": "dynamic",
+          "count": 3784
+        },
+        {
+          "word": "island",
+          "count": 3781
+        },
+        {
+          "word": "integer",
+          "count": 3774
+        },
+        {
+          "word": "garden",
+          "count": 3768
+        },
+        {
+          "word": "boolean",
+          "count": 3762
+        },
+        {
+          "word": "elastic",
+          "count": 3759
+        },
+        {
+          "word": "cluster",
+          "count": 3752
+        }
+      ]
+    },
+    {
+      "concurrency": 4,
+      "durationMs": 129.79,
+      "totalWords": 200000,
+      "uniqueWords": 54,
+      "topWords": [
+        {
+          "word": "worker",
+          "count": 3825
+        },
+        {
+          "word": "engine",
+          "count": 3810
+        },
+        {
+          "word": "yellow",
+          "count": 3799
+        },
+        {
+          "word": "dynamic",
+          "count": 3784
+        },
+        {
+          "word": "island",
+          "count": 3781
+        },
+        {
+          "word": "integer",
+          "count": 3774
+        },
+        {
+          "word": "garden",
+          "count": 3768
+        },
+        {
+          "word": "boolean",
+          "count": 3762
+        },
+        {
+          "word": "elastic",
+          "count": 3759
+        },
+        {
+          "word": "cluster",
+          "count": 3752
+        }
+      ]
+    },
+    {
+      "concurrency": 8,
+      "durationMs": 151.49,
+      "totalWords": 200000,
+      "uniqueWords": 54,
+      "topWords": [
+        {
+          "word": "worker",
+          "count": 3825
+        },
+        {
+          "word": "engine",
+          "count": 3810
+        },
+        {
+          "word": "yellow",
+          "count": 3799
+        },
+        {
+          "word": "dynamic",
+          "count": 3784
+        },
+        {
+          "word": "island",
+          "count": 3781
+        },
+        {
+          "word": "integer",
+          "count": 3774
+        },
+        {
+          "word": "garden",
+          "count": 3768
+        },
+        {
+          "word": "boolean",
+          "count": 3762
+        },
+        {
+          "word": "elastic",
+          "count": 3759
+        },
+        {
+          "word": "cluster",
+          "count": 3752
+        }
+      ]
+    }
+  ]
+}
