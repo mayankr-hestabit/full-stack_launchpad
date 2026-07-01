@@ -32,4 +32,9 @@ function validate(a, b) {
   }
 }
 
-module.exports = { add, subtract, multiply, divide, power, validate };
+// Return absolute value of a
+function absolute(a) {
+  return Math.abs(a);
+}
+
+module.exports = { add, subtract, multiply, divide, power, validate, absolute };
