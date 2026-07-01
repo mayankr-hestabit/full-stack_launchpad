@@ -25,4 +25,11 @@ function power(a, b) {
   return Math.pow(a, b);
 }
 
-module.exports = { add, subtract, multiply, divide, power };
+// Validate inputs are numbers
+function validate(a, b) {
+  if (typeof a !== 'number' || typeof b !== 'number') {
+    throw new Error('Both inputs must be numbers');
+  }
+}
+
+module.exports = { add, subtract, multiply, divide, power, validate };
