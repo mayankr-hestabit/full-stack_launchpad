@@ -1,0 +1,28 @@
+# Git Stash Session — Day 3
+
+## Scenario
+Was in the middle of writing cube() function (not ready to commit)
+and needed to pull latest changes from remote without losing work.
+
+## Commands Run
+
+$ git stash
+Saved working directory and index state WIP on master: 79e42c0 improved divide function
+→ cube() function temporarily shelved, working directory cleaned
+
+$ git status
+nothing to commit, working tree clean
+→ confirmed stash worked, no uncommitted changes visible
+
+$ git pull origin master
+Already up to date.
+→ pulled latest from remote safely with clean working directory
+
+$ git stash apply
+Changes not staged for commit: modified: calculator.js
+→ cube() function restored, ready to continue working
+
+## Key Insight
+git stash is a temporary shelf for work in progress — not a commit,
+not deleted, just set aside. stash apply brings it back exactly
+as it was. Essential for context switching without losing work.
