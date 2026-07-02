@@ -1,6 +1,6 @@
 // Basic calculator module
 //
-// Add two numbers
+// Developer A: add function handles positive and negative numbers
 function add(a,b) {
 	return a + b;
 }
