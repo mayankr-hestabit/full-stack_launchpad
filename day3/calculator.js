@@ -1,6 +1,6 @@
 // Basic calculator module
 //
-// Add two numbers
+// Developer B: add function used by all arithmetic operations
 function add(a,b) {
 	return a + b;
 }
