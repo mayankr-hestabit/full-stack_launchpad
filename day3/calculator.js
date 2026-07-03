@@ -1,6 +1,10 @@
 // Basic calculator module
 //
+
 // Developer B: add function used by all arithmetic operations
+
+// Developer A: add function handles positive and negative numbers
+
 function add(a,b) {
 	return a + b;
 }
