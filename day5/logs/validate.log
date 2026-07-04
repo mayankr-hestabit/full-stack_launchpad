@@ -1,0 +1,7 @@
+[2026-07-04 12:40:14] Starting validation...
+[2026-07-04 12:40:14] ✅ src/ directory exists
+[2026-07-04 12:40:14] ✅ config.json found
+[2026-07-04 12:40:14] ✅ config.json is valid JSON
+[2026-07-04 12:40:14] ✅ All checks passed
+[2026-07-04 12:40:38] Starting validation...
+[2026-07-04 12:40:38] ❌ src/ directory missing
