@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DevBlog - Engineering insights and tutorials">
+  <title>DevBlog — Engineering Insights</title>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <figure>
+      <img src="https://via.placeholder.com/120x40" alt="DevBlog Logo">
+    </figure>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#technology">Technology</a></li>
+        <li><a href="#engineering">Engineering</a></li>
+        <li><a href="#devops">DevOps</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO: FEATURED POST -->
+  <section id="home">
+    <article>
+      <header>
+        <p><a href="#technology">TECHNOLOGY</a></p>
+        <h1>Understanding Node.js Streams: Processing Large Files Efficiently</h1>
+        <p>Node.js streams allow you to process large files without loading them entirely into memory. Instead of reading a 50MB file all at once, streams process it in small chunks saving both time and memory.</p>
+        <footer>
+          <figure>
+            <img src="https://via.placeholder.com/40" alt="Mayank Raj profile photo">
+          </figure>
+          <address>By <a href="#author">Mayank Raj</a></address>
+          <time datetime="2026-07-01">July 1, 2026</time>
+          <span>5 min read</span>
+        </footer>
+      </header>
+      <figure>
+        <img src="https://via.placeholder.com/1200x500" alt="Node.js streams diagram showing data flowing through chunks">
+        <figcaption>Data flowing through Node.js streams in small chunks</figcaption>
+      </figure>
+    </article>
+  </section>
+
+  <!-- MAIN CONTENT + SIDEBAR -->
+  <main>
+
+    <!-- BLOG POSTS -->
+    <section id="articles">
+      <h2>Latest Articles</h2>
+
+      <!-- POST 1 -->
+      <article>
+        <figure>
+          <img src="https://via.placeholder.com/600x300" alt="Git bisect binary search diagram">
+          <figcaption>Git bisect in action</figcaption>
+        </figure>
+        <header>
+          <p><a href="#engineering">ENGINEERING</a></p>
+          <h3><a href="#post1">Git Bisect: Finding Bugs with Binary Search</a></h3>
+          <p>When a bug appears in your codebase but you don't know which commit introduced it, git bisect saves the day by performing a binary search through your commit history.</p>
+        </header>
+        <footer>
+          <figure>
+            <img src="https://via.placeholder.com/40" alt="Mayank Raj profile photo">
+          </figure>
+          <address>By <a href="#author">Mayank Raj</a></address>
+          <time datetime="2026-07-03">July 3, 2026</time>
+          <span>4 min read</span>
+        </footer>
+      </article>
+
+      <!-- POST 2 -->
+      <article>
+        <figure>
+          <img src="https://via.placeholder.com/600x300" alt="HTTP ETag caching flow diagram">
+          <figcaption>ETag caching cycle</figcaption>
+        </figure>
+        <header>
+          <p><a href="#technology">TECHNOLOGY</a></p>
+          <h3><a href="#post2">HTTP Caching with ETags Explained</a></h3>
+          <p>ETags are unique fingerprints assigned to HTTP responses. When content hasn't changed, the server returns 304 Not Modified instead of resending the full response saving bandwidth.</p>
+        </header>
+        <footer>
+          <figure>
+            <img src="https://via.placeholder.com/40" alt="Mayank Raj profile photo">
+          </figure>
+          <address>By <a href="#author">Mayank Raj</a></address>
+          <time datetime="2026-07-05">July 5, 2026</time>
+          <span>6 min read</span>
+        </footer>
+      </article>
+
+      <!-- POST 3 -->
+      <article>
+        <figure>
+          <img src="https://via.placeholder.com/600x300" alt="Node.js worker threads concurrency diagram">
+          <figcaption>Worker threads running in parallel</figcaption>
+        </figure>
+        <header>
+          <p><a href="#engineering">ENGINEERING</a></p>
+          <h3><a href="#post3">Concurrency in Node.js: Worker Threads vs Promise.all</a></h3>
+          <p>Node.js is single-threaded but worker_threads lets you run CPU-intensive tasks in parallel. We benchmarked concurrency levels 1, 4, and 8 on a 200,000 word corpus.</p>
+        </header>
+        <footer>
+          <figure>
+            <img src="https://via.placeholder.com/40" alt="Mayank Raj profile photo">
+          </figure>
+          <address>By <a href="#author">Mayank Raj</a></address>
+          <time datetime="2026-07-06">July 6, 2026</time>
+          <span>7 min read</span>
+        </footer>
+      </article>
+
+      <!-- POST 4 -->
+      <article>
+        <figure>
+          <img src="https://via.placeholder.com/600x300" alt="Husky pre-commit hook blocking bad commit">
+          <figcaption>Husky blocking a bad commit</figcaption>
+        </figure>
+        <header>
+          <p><a href="#devops">DEVOPS</a></p>
+          <h3><a href="#post4">Automating Code Quality with Husky and ESLint</a></h3>
+          <p>Pre-commit hooks automatically run ESLint and Prettier before every commit, blocking bad code from ever entering your repository. Here's how to set it up in under 10 minutes.</p>
+        </header>
+        <footer>
+          <figure>
+            <img src="https://via.placeholder.com/40" alt="Mayank Raj profile photo">
+          </figure>
+          <address>By <a href="#author">Mayank Raj</a></address>
+          <time datetime="2026-07-07">July 7, 2026</time>
+          <span>5 min read</span>
+        </footer>
+      </article>
+
+    </section>
+
+    <!-- SIDEBAR -->
+    <aside id="about">
+
+      <!-- SEARCH -->
+      <section>
+        <h3>Search</h3>
+        <form action="#" method="get" role="search">
+          <label for="search">Search articles</label>
+          <input type="search" id="search" name="search" placeholder="Search...">
+          <button type="submit">Search</button>
+        </form>
+      </section>
+
+      <!-- ABOUT -->
+      <section>
+        <h3>About Me</h3>
+        <figure>
+          <img src="https://via.placeholder.com/150" alt="Mayank Raj profile photo">
+          <figcaption>Mayank Raj — Software Engineer</figcaption>
+        </figure>
+        <p>Full stack engineer passionate about performance, developer tooling, and clean architecture. Currently doing a full stack bootcamp.</p>
+      </section>
+
+      <!-- CATEGORIES -->
+      <section>
+        <h3>Categories</h3>
+        <ul>
+          <li><a href="#technology">Technology <span>(3)</span></a></li>
+          <li><a href="#engineering">Engineering <span>(4)</span></a></li>
+          <li><a href="#devops">DevOps <span>(2)</span></a></li>
+          <li><a href="#performance">Performance <span>(3)</span></a></li>
+        </ul>
+      </section>
+
+      <!-- RECENT POSTS -->
+      <section>
+        <h3>Recent Posts</h3>
+        <ul>
+          <li>
+            <article>
+              <figure>
+                <img src="https://via.placeholder.com/80" alt="Recent post thumbnail">
+              </figure>
+              <h4><a href="#post4">Automating Code Quality with Husky</a></h4>
+              <time datetime="2026-07-07">July 7, 2026</time>
+            </article>
+          </li>
+          <li>
+            <article>
+              <figure>
+                <img src="https://via.placeholder.com/80" alt="Recent post thumbnail">
+              </figure>
+              <h4><a href="#post3">Concurrency in Node.js</a></h4>
+              <time datetime="2026-07-06">July 6, 2026</time>
+            </article>
+          </li>
+          <li>
+            <article>
+              <figure>
+                <img src="https://via.placeholder.com/80" alt="Recent post thumbnail">
+              </figure>
+              <h4><a href="#post2">HTTP Caching with ETags</a></h4>
+              <time datetime="2026-07-05">July 5, 2026</time>
+            </article>
+          </li>
+        </ul>
+      </section>
+
+      <!-- TAGS -->
+      <section>
+        <h3>Tags</h3>
+        <ul>
+          <li><a href="#nodejs">Node.js</a></li>
+          <li><a href="#git">Git</a></li>
+          <li><a href="#http">HTTP</a></li>
+          <li><a href="#performance">Performance</a></li>
+          <li><a href="#devops">DevOps</a></li>
+          <li><a href="#javascript">JavaScript</a></li>
+          <li><a href="#streams">Streams</a></li>
+          <li><a href="#caching">Caching</a></li>
+        </ul>
+      </section>
+
+    </aside>
+
+  </main>
+
+  <!-- CONTACT FORM -->
+  <section id="contact">
+    <h2>Get in Touch</h2>
+    <form action="#" method="post">
+
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required minlength="2">
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="topic">Topic</label>
+      <select id="topic" name="topic" required>
+        <option value="">Select a topic</option>
+        <option value="nodejs">Node.js</option>
+        <option value="git">Git</option>
+        <option value="http">HTTP</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Write your message..." required minlength="10"></textarea>
+
+      <button type="submit">Send Message</button>
+
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <section>
+      <figure>
+        <img src="https://via.placeholder.com/120x40" alt="DevBlog logo">
+      </figure>
+      <p>Engineering insights, tutorials, and deep dives into modern software development.</p>
+    </section>
+
+    <nav aria-label="Footer navigation">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#articles">Articles</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <nav aria-label="Categories navigation">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="#technology">Technology</a></li>
+        <li><a href="#engineering">Engineering</a></li>
+        <li><a href="#devops">DevOps</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <h4>Newsletter</h4>
+      <form action="#" method="post">
+        <label for="newsletter-email">Subscribe to newsletter</label>
+        <input type="email" id="newsletter-email" name="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+
+    <p><small>&copy; 2026 DevBlog by Mayank Raj. All rights reserved.</small></p>
+  </footer>
+
+</body>
+</html>
