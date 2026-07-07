@@ -9,34 +9,34 @@
 <body>
 
   <!-- HEADER -->
-  <header>
+  <header role="banner">
     <figure>
       <img src="https://via.placeholder.com/120x40" alt="DevBlog Logo">
     </figure>
-    <nav>
+    <nav aria-label="Main navigation">
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#technology">Technology</a></li>
-        <li><a href="#engineering">Engineering</a></li>
-        <li><a href="#devops">DevOps</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home" tabindex="1">Home</a></li>
+        <li><a href="#technology" tabindex="2">Technology</a></li>
+        <li><a href="#engineering" tabindex="3">Engineering</a></li>
+        <li><a href="#devops" tabindex="4">DevOps</a></li>
+        <li><a href="#about" tabindex="5">About</a></li>
+        <li><a href="#contact" tabindex="6">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- HERO: FEATURED POST -->
-  <section id="home">
+  <section id="home" aria-labelledby="hero-heading">
     <article>
       <header>
         <p><a href="#technology">TECHNOLOGY</a></p>
-        <h1>Understanding Node.js Streams: Processing Large Files Efficiently</h1>
+        <h1 id="hero-heading">Understanding Node.js Streams: Processing Large Files Efficiently</h1>
         <p>Node.js streams allow you to process large files without loading them entirely into memory. Instead of reading a 50MB file all at once, streams process it in small chunks saving both time and memory.</p>
         <footer>
           <figure>
             <img src="https://via.placeholder.com/40" alt="Mayank Raj profile photo">
           </figure>
-          <address>By <a href="#author">Mayank Raj</a></address>
+          <address>By <a href="#about">Mayank Raj</a></address>
           <time datetime="2026-07-01">July 1, 2026</time>
           <span>5 min read</span>
         </footer>
@@ -49,11 +49,11 @@
   </section>
 
   <!-- MAIN CONTENT + SIDEBAR -->
-  <main>
+  <main role="main" aria-label="Blog content">
 
     <!-- BLOG POSTS -->
-    <section id="articles">
-      <h2>Latest Articles</h2>
+    <section id="articles" aria-labelledby="articles-heading">
+      <h2 id="articles-heading">Latest Articles</h2>
 
       <!-- POST 1 -->
       <article>
@@ -70,7 +70,7 @@
           <figure>
             <img src="https://via.placeholder.com/40" alt="Mayank Raj profile photo">
           </figure>
-          <address>By <a href="#author">Mayank Raj</a></address>
+          <address>By <a href="#about">Mayank Raj</a></address>
           <time datetime="2026-07-03">July 3, 2026</time>
           <span>4 min read</span>
         </footer>
@@ -91,7 +91,7 @@
           <figure>
             <img src="https://via.placeholder.com/40" alt="Mayank Raj profile photo">
           </figure>
-          <address>By <a href="#author">Mayank Raj</a></address>
+          <address>By <a href="#about">Mayank Raj</a></address>
           <time datetime="2026-07-05">July 5, 2026</time>
           <span>6 min read</span>
         </footer>
@@ -112,7 +112,7 @@
           <figure>
             <img src="https://via.placeholder.com/40" alt="Mayank Raj profile photo">
           </figure>
-          <address>By <a href="#author">Mayank Raj</a></address>
+          <address>By <a href="#about">Mayank Raj</a></address>
           <time datetime="2026-07-06">July 6, 2026</time>
           <span>7 min read</span>
         </footer>
@@ -133,7 +133,7 @@
           <figure>
             <img src="https://via.placeholder.com/40" alt="Mayank Raj profile photo">
           </figure>
-          <address>By <a href="#author">Mayank Raj</a></address>
+          <address>By <a href="#about">Mayank Raj</a></address>
           <time datetime="2026-07-07">July 7, 2026</time>
           <span>5 min read</span>
         </footer>
@@ -142,21 +142,27 @@
     </section>
 
     <!-- SIDEBAR -->
-    <aside id="about">
+    <aside id="about" aria-label="Sidebar">
 
       <!-- SEARCH -->
-      <section>
-        <h3>Search</h3>
-        <form action="#" method="get" role="search">
+      <section aria-labelledby="search-heading">
+        <h3 id="search-heading">Search</h3>
+        <form action="#" method="get" role="search" aria-label="Search articles">
           <label for="search">Search articles</label>
-          <input type="search" id="search" name="search" placeholder="Search...">
-          <button type="submit">Search</button>
+          <input
+            type="search"
+            id="search"
+            name="search"
+            placeholder="Search..."
+            aria-label="Search articles"
+            tabindex="0">
+          <button type="submit" tabindex="0">Search</button>
         </form>
       </section>
 
       <!-- ABOUT -->
-      <section>
-        <h3>About Me</h3>
+      <section aria-labelledby="about-heading">
+        <h3 id="about-heading">About Me</h3>
         <figure>
           <img src="https://via.placeholder.com/150" alt="Mayank Raj profile photo">
           <figcaption>Mayank Raj — Software Engineer</figcaption>
@@ -165,44 +171,44 @@
       </section>
 
       <!-- CATEGORIES -->
-      <section>
-        <h3>Categories</h3>
+      <section aria-labelledby="categories-heading">
+        <h3 id="categories-heading">Categories</h3>
         <ul>
-          <li><a href="#technology">Technology <span>(3)</span></a></li>
-          <li><a href="#engineering">Engineering <span>(4)</span></a></li>
-          <li><a href="#devops">DevOps <span>(2)</span></a></li>
-          <li><a href="#performance">Performance <span>(3)</span></a></li>
+          <li><a href="#technology" tabindex="0">Technology <span>(3)</span></a></li>
+          <li><a href="#engineering" tabindex="0">Engineering <span>(4)</span></a></li>
+          <li><a href="#devops" tabindex="0">DevOps <span>(2)</span></a></li>
+          <li><a href="#performance" tabindex="0">Performance <span>(3)</span></a></li>
         </ul>
       </section>
 
       <!-- RECENT POSTS -->
-      <section>
-        <h3>Recent Posts</h3>
+      <section aria-labelledby="recent-heading">
+        <h3 id="recent-heading">Recent Posts</h3>
         <ul>
           <li>
             <article>
               <figure>
-                <img src="https://via.placeholder.com/80" alt="Recent post thumbnail">
+                <img src="https://via.placeholder.com/80" alt="Husky pre-commit hook thumbnail">
               </figure>
-              <h4><a href="#post4">Automating Code Quality with Husky</a></h4>
+              <h4><a href="#post4" tabindex="0">Automating Code Quality with Husky</a></h4>
               <time datetime="2026-07-07">July 7, 2026</time>
             </article>
           </li>
           <li>
             <article>
               <figure>
-                <img src="https://via.placeholder.com/80" alt="Recent post thumbnail">
+                <img src="https://via.placeholder.com/80" alt="Node.js concurrency thumbnail">
               </figure>
-              <h4><a href="#post3">Concurrency in Node.js</a></h4>
+              <h4><a href="#post3" tabindex="0">Concurrency in Node.js</a></h4>
               <time datetime="2026-07-06">July 6, 2026</time>
             </article>
           </li>
           <li>
             <article>
               <figure>
-                <img src="https://via.placeholder.com/80" alt="Recent post thumbnail">
+                <img src="https://via.placeholder.com/80" alt="HTTP caching thumbnail">
               </figure>
-              <h4><a href="#post2">HTTP Caching with ETags</a></h4>
+              <h4><a href="#post2" tabindex="0">HTTP Caching with ETags</a></h4>
               <time datetime="2026-07-05">July 5, 2026</time>
             </article>
           </li>
@@ -210,17 +216,17 @@
       </section>
 
       <!-- TAGS -->
-      <section>
-        <h3>Tags</h3>
+      <section aria-labelledby="tags-heading">
+        <h3 id="tags-heading">Tags</h3>
         <ul>
-          <li><a href="#nodejs">Node.js</a></li>
-          <li><a href="#git">Git</a></li>
-          <li><a href="#http">HTTP</a></li>
-          <li><a href="#performance">Performance</a></li>
-          <li><a href="#devops">DevOps</a></li>
-          <li><a href="#javascript">JavaScript</a></li>
-          <li><a href="#streams">Streams</a></li>
-          <li><a href="#caching">Caching</a></li>
+          <li><a href="#nodejs" tabindex="0">Node.js</a></li>
+          <li><a href="#git" tabindex="0">Git</a></li>
+          <li><a href="#http" tabindex="0">HTTP</a></li>
+          <li><a href="#performance" tabindex="0">Performance</a></li>
+          <li><a href="#devops" tabindex="0">DevOps</a></li>
+          <li><a href="#javascript" tabindex="0">JavaScript</a></li>
+          <li><a href="#streams" tabindex="0">Streams</a></li>
+          <li><a href="#caching" tabindex="0">Caching</a></li>
         </ul>
       </section>
 
@@ -228,19 +234,70 @@
 
   </main>
 
+  <!-- MEDIA SECTION -->
+  <section id="media" aria-labelledby="media-heading">
+    <h2 id="media-heading">Featured Media</h2>
+
+    <!-- VIDEO -->
+    <figure>
+      <video
+        controls
+        width="800"
+        aria-label="Tutorial video about Node.js streams"
+        tabindex="0">
+        <source src="demo.mp4" type="video/mp4">
+        <p>Your browser does not support HTML5 video. <a href="demo.mp4">Download the video</a></p>
+      </video>
+      <figcaption>Demo: Building a Node.js CLI tool from scratch</figcaption>
+    </figure>
+
+    <!-- AUDIO -->
+    <figure>
+      <audio
+        controls
+        aria-label="Podcast episode about git workflows"
+        tabindex="0">
+        <source src="podcast.mp3" type="audio/mpeg">
+        <p>Your browser does not support HTML5 audio. <a href="podcast.mp3">Download the podcast</a></p>
+      </audio>
+      <figcaption>Podcast: Git workflows for solo developers</figcaption>
+    </figure>
+
+  </section>
+
   <!-- CONTACT FORM -->
-  <section id="contact">
-    <h2>Get in Touch</h2>
-    <form action="#" method="post">
+  <section id="contact" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Get in Touch</h2>
+    <form action="#" method="post" aria-label="Contact form">
 
       <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" placeholder="Enter your name" required minlength="2">
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter your name"
+        required
+        minlength="2"
+        aria-required="true"
+        tabindex="0">
 
       <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter your email"
+        required
+        aria-required="true"
+        tabindex="0">
 
       <label for="topic">Topic</label>
-      <select id="topic" name="topic" required>
+      <select
+        id="topic"
+        name="topic"
+        required
+        aria-required="true"
+        tabindex="0">
         <option value="">Select a topic</option>
         <option value="nodejs">Node.js</option>
         <option value="git">Git</option>
@@ -249,15 +306,23 @@
       </select>
 
       <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" placeholder="Write your message..." required minlength="10"></textarea>
+      <textarea
+        id="message"
+        name="message"
+        rows="5"
+        placeholder="Write your message..."
+        required
+        minlength="10"
+        aria-required="true"
+        tabindex="0"></textarea>
 
-      <button type="submit">Send Message</button>
+      <button type="submit" tabindex="0">Send Message</button>
 
     </form>
   </section>
 
   <!-- FOOTER -->
-  <footer>
+  <footer role="contentinfo">
     <section>
       <figure>
         <img src="https://via.placeholder.com/120x40" alt="DevBlog logo">
@@ -265,31 +330,38 @@
       <p>Engineering insights, tutorials, and deep dives into modern software development.</p>
     </section>
 
-    <nav aria-label="Footer navigation">
+    <nav aria-label="Footer quick links">
       <h4>Quick Links</h4>
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#articles">Articles</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home" tabindex="0">Home</a></li>
+        <li><a href="#articles" tabindex="0">Articles</a></li>
+        <li><a href="#about" tabindex="0">About</a></li>
+        <li><a href="#contact" tabindex="0">Contact</a></li>
       </ul>
     </nav>
 
-    <nav aria-label="Categories navigation">
+    <nav aria-label="Footer categories">
       <h4>Categories</h4>
       <ul>
-        <li><a href="#technology">Technology</a></li>
-        <li><a href="#engineering">Engineering</a></li>
-        <li><a href="#devops">DevOps</a></li>
+        <li><a href="#technology" tabindex="0">Technology</a></li>
+        <li><a href="#engineering" tabindex="0">Engineering</a></li>
+        <li><a href="#devops" tabindex="0">DevOps</a></li>
       </ul>
     </nav>
 
-    <section>
-      <h4>Newsletter</h4>
-      <form action="#" method="post">
+    <section aria-labelledby="newsletter-heading">
+      <h4 id="newsletter-heading">Newsletter</h4>
+      <form action="#" method="post" aria-label="Newsletter subscription form">
         <label for="newsletter-email">Subscribe to newsletter</label>
-        <input type="email" id="newsletter-email" name="email" placeholder="Your email address" required>
-        <button type="submit">Subscribe</button>
+        <input
+          type="email"
+          id="newsletter-email"
+          name="email"
+          placeholder="Your email address"
+          required
+          aria-required="true"
+          tabindex="0">
+        <button type="submit" tabindex="0">Subscribe</button>
       </form>
     </section>
 
