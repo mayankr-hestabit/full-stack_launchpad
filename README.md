@@ -1,11 +1,17 @@
-# Launchpad Week 1 — Engineering Mindset Bootcamp
+# Full Stack Launchpad
+
+A structured full-stack engineering bootcamp repository.
 
 ## Structure
-- `day1/` — System reverse engineering, Node/terminal mastery
-- `day2/` — CLI tool, concurrency, large data processing
-- `day3/` — Git mastery
-- `day4/` — HTTP/API forensics
-- `day5/` — Automation & CI pipeline
+
+full-stack_launchpad/
+├── week1/    — Engineering Mindset Bootcamp
+│   ├── day1/ — System reverse engineering, Node/terminal mastery
+│   ├── day2/ — CLI tool, concurrency, large data processing
+│   ├── day3/ — Git mastery
+│   ├── day4/ — HTTP/API forensics
+│   └── day5/ — Automation & CI pipeline
+└── week2/    — Coming soon
 
 ## Environment
 - OS: Ubuntu 24.04.1 LTS (WSL2)
