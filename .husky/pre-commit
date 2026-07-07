@@ -1,0 +1,36 @@
+#!/bin/sh
+
+echo "Running pre-commit checks..."
+
+# Store root directory
+ROOT_DIR=$(pwd)
+
+# Run validate.sh
+echo "1. Running validate.sh..."
+bash ./week1/day5/validate.sh
+if [ $? -ne 0 ]; then
+  echo "❌ validate.sh failed - commit blocked"
+  exit 1
+fi
+
+# Run ESLint from inside day5/
+echo "2. Running ESLint..."
+cd "$ROOT_DIR/week1/day5" && npx eslint src/
+ESLINT_EXIT=$?
+cd "$ROOT_DIR"
+if [ $ESLINT_EXIT -ne 0 ]; then
+  echo "❌ ESLint failed - commit blocked"
+  exit 1
+fi
+
+# Run Prettier from inside day5/
+echo "3. Running Prettier..."
+cd "$ROOT_DIR/week1/day5" && npx prettier --check src/
+PRETTIER_EXIT=$?
+cd "$ROOT_DIR"
+if [ $PRETTIER_EXIT -ne 0 ]; then
+  echo "❌ Prettier check failed - commit blocked"
+  exit 1
+fi
+
+echo "✅ All checks passed - proceeding with commit"

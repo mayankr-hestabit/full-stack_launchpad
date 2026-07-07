@@ -3,7 +3,7 @@
 
 # Timestamp for logs
 TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
-LOG_FILE="./logs/validate.log"
+LOG_FILE="./week1/day5/logs/validate.log"
 
 # Create logs directory if it doesn't exist
 mkdir -p logs
@@ -11,7 +11,7 @@ mkdir -p logs
 echo "[$TIMESTAMP] Starting validation..." | tee -a $LOG_FILE
 
 # ─── Check 1: src/ directory exists ───────────────────
-if [ -d "./src" ]; then
+if [ -d "./week1/day5/src" ]; then
   echo "[$TIMESTAMP] ✅ src/ directory exists" | tee -a $LOG_FILE
 else
   echo "[$TIMESTAMP] ❌ src/ directory missing" | tee -a $LOG_FILE
@@ -19,7 +19,7 @@ else
 fi
 
 # ─── Check 2: config.json exists ──────────────────────
-if [ -f "./config.json" ]; then
+if [ -f "./week1/day5/config.json" ]; then
   echo "[$TIMESTAMP] ✅ config.json found" | tee -a $LOG_FILE
 else
   echo "[$TIMESTAMP] ❌ config.json missing" | tee -a $LOG_FILE
@@ -27,7 +27,7 @@ else
 fi
 
 # ─── Check 3: config.json is valid JSON ───────────────
-if python3 -m json.tool ./config.json > /dev/null 2>&1; then
+if python3 -m json.tool ./week1/day5/config.json > /dev/null 2>&1; then
   echo "[$TIMESTAMP] ✅ config.json is valid JSON" | tee -a $LOG_FILE
 else
   echo "[$TIMESTAMP] ❌ config.json is invalid JSON" | tee -a $LOG_FILE
