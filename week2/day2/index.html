@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 2 — CSS Layout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER + MENU (Flexbox) -->
+  <header class="site-header">
+    <div class="logo">
+      <h1>DevBlog</h1>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#articles">Articles</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO (full width) -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="category">TECHNOLOGY</p>
+      <h2>Understanding Node.js Streams: Processing Large Files Efficiently</h2>
+      <p>Node.js streams allow you to process large files without loading them entirely into memory.</p>
+      <a href="#articles" class="btn">Read More</a>
+    </div>
+  </section>
+
+  <!-- MAIN GRID (content + sidebar) -->
+  <div class="page-grid">
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <!-- ARTICLE CARDS GRID -->
+      <section class="articles-grid">
+
+        <article class="card">
+          <div class="card-img engineering" aria-label="Git bisect diagram"></div>
+          <div class="card-body">
+            <p class="category">ENGINEERING</p>
+            <h3>Git Bisect: Finding Bugs with Binary Search</h3>
+            <p>When a bug appears in your codebase but you don't know which commit introduced it, git bisect saves the day.</p>
+            <footer class="card-footer">
+              <span>Mayank Raj</span>
+              <time datetime="2026-07-03">July 3, 2026</time>
+              <span>4 min read</span>
+            </footer>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img technology" aria-label="ETag Caching diagram"></div>
+          <div class="card-body">
+            <p class="category">TECHNOLOGY</p>
+            <h3>HTTP Caching with ETags Explained</h3>
+            <p>ETags are unique fingerprints assigned to HTTP responses. When content hasn't changed, server returns 304.</p>
+            <footer class="card-footer">
+              <span>Mayank Raj</span>
+              <time datetime="2026-07-05">July 5, 2026</time>
+              <span>6 min read</span>
+            </footer>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img engineering" aria-label="Worker threads diagram"></div>
+          <div class="card-body">
+            <p class="category">ENGINEERING</p>
+            <h3>Concurrency in Node.js: Worker Threads vs Promise.all</h3>
+            <p>Node.js is single-threaded but worker_threads lets you run CPU-intensive tasks in parallel.</p>
+            <footer class="card-footer">
+              <span>Mayank Raj</span>
+              <time datetime="2026-07-06">July 6, 2026</time>
+              <span>7 min read</span>
+            </footer>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img devops" aria-label="Husky pre-commit hook"></div> 
+          <div class="card-body">
+            <p class="category">DEVOPS</p>
+            <h3>Automating Code Quality with Husky and ESLint</h3>
+            <p>Pre-commit hooks automatically run ESLint and Prettier before every commit.</p>
+            <footer class="card-footer">
+              <span>Mayank Raj</span>
+              <time datetime="2026-07-07">July 7, 2026</time>
+              <span>5 min read</span>
+            </footer>
+          </div>
+        </article>
+
+      </section>
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <!-- IMAGE section -->
+      <section class="sidebar-section">
+        <div class="featured-img" aria-label="Featured image"></div>
+      </section>
+
+      <!-- EXTRA section -->
+      <section class="sidebar-section about">
+        <h3>About Me</h3>
+        <div class="avatar" aria-label="Mayank Raj profile photo"></div>
+        <p>Full stack engineer passionate about performance and clean architecture.</p>
+      </section>
+
+      <section class="sidebar-section categories">
+        <h3>Categories</h3>
+        <ul>
+          <li><a href="#technology">Technology (3)</a></li>
+          <li><a href="#engineering">Engineering (4)</a></li>
+          <li><a href="#devops">DevOps (2)</a></li>
+        </ul>
+      </section>
+
+      <section class="sidebar-section tags">
+        <h3>Tags</h3>
+        <ul class="tags-list">
+          <li><a href="#nodejs">Node.js</a></li>
+          <li><a href="#git">Git</a></li>
+          <li><a href="#http">HTTP</a></li>
+          <li><a href="#devops">DevOps</a></li>
+          <li><a href="#streams">Streams</a></li>
+        </ul>
+      </section>
+
+    </aside>
+
+  </div>
+
+  <!-- BANNER/FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <section>
+        <h3>DevBlog</h3>
+        <p>Engineering insights and tutorials.</p>
+      </section>
+      <nav>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#articles">Articles</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <section>
+        <h4>Newsletter</h4>
+        <form>
+          <input type="email" placeholder="Your email">
+          <button type="submit">Subscribe</button>
+        </form>
+      </section>
+    </div>
+    <p class="copyright">&copy; 2026 DevBlog by Mayank Raj</p>
+  </footer>
+
+</body>
+</html>
