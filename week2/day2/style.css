@@ -188,11 +188,6 @@ ul {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
-.card img {
-  background-color: var(--color-dark);
-  min-height: 200px;
-}
-
 /* ─── IMAGE PLACEHOLDERS ─────────────────────────────── */
 .card-img {
   width: 100%;
@@ -224,11 +219,6 @@ ul {
   height: 150px;
   border-radius: var(--border-radius);
   background: linear-gradient(135deg, #2d4a6e, #40916c);
-}
-
-.sidebar-section img {
-  background-color: var(--color-light);
-  min-height: 100px;
 }
 
 .card-body {
@@ -317,15 +307,6 @@ ul {
   background-color: var(--color-primary);
   color: var(--color-white);
   border-color: var(--color-primary);
-}
-
-/* About section image */
-.sidebar-section img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin-bottom: var(--spacing-sm);
-  object-fit: cover;
 }
 
 /* ─── FOOTER ────────────────────────────────────────────
