@@ -601,6 +601,17 @@
       setTimeout(() => { indicator.style.display = 'none'; }, 1000);
     }, 500);
 
+    // ─── GROUPBY ──────────────────────────────────────────
+    // Groups array items by a property value
+    const groupBy = (array, key) => {
+      return array.reduce((groups, item) => {
+        const group = item[key];
+        groups[group] = groups[group] || [];
+        groups[group].push(item);
+        return groups;
+      }, {});
+    };
+
     // ─── FILTERS ──────────────────────────────────────────
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -643,8 +654,13 @@
 
     // ─── INIT ─────────────────────────────────────────────
     loadTodos();
-    renderTodos();
 
+    // Demo — open DevTools Console (F12) to see output
+    const grouped = groupBy(todos, 'completed');
+    console.log('groupBy completed:', grouped);
+
+    renderTodos();
+    
   </script>
 
 </body>
