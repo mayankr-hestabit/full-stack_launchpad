@@ -1,435 +1,117 @@
-/* ─── RESET ─────────────────────────────────────────────
-   Browsers add default margin/padding to elements.
-   We remove them so we start with a clean slate.
-─────────────────────────────────────────────────────── */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ─── ROOT VARIABLES ────────────────────────────────────
-   CSS variables — define colors and sizes once,
-   use them everywhere. Change here = changes everywhere.
-─────────────────────────────────────────────────────── */
-:root {
-  --color-primary: #e63946;      /* red — accent color */
-  --color-dark: #1d2d44;         /* dark navy — header/main */
-  --color-light: #f8f9fa;        /* light grey — background */
-  --color-white: #ffffff;
-  --color-text: #333333;
-  --color-muted: #6c757d;        /* grey — secondary text */
-
-  --font-size-base: 16px;
-  --font-size-sm: 0.875rem;      /* 14px */
-  --font-size-lg: 1.25rem;       /* 20px */
-  --font-size-xl: 2rem;          /* 32px */
-
-  --spacing-sm: 0.5rem;          /* 8px */
-  --spacing-md: 1rem;            /* 16px */
-  --spacing-lg: 2rem;            /* 32px */
-  --spacing-xl: 4rem;            /* 64px */
-
-  --border-radius: 8px;
-  --max-width: 1200px;
-}
-
-/* ─── BASE STYLES ───────────────────────────────────────
-   Global styles applied to everything
-─────────────────────────────────────────────────────── */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: var(--font-size-base);
-  color: var(--color-text);
-  background-color: var(--color-light);
-  line-height: 1.6;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-ul {
-  list-style: none;
-}
-
-/* ─── HEADER (Flexbox) ──────────────────────────────────
-   Logo on left, nav on right — classic navbar layout
-─────────────────────────────────────────────────────── */
-.site-header {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: 1.5rem;
+  background: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: var(--spacing-md) var(--spacing-lg);
-  background-color: var(--color-dark);
-  color: var(--color-white);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  min-height: 100vh;
+  padding: 2rem;
 }
 
-.logo h1 {
-  font-size: var(--font-size-lg);
-  color: var(--color-primary);
-  letter-spacing: 2px;
-}
-
-.main-nav ul {
+/* ─── WRAPPER ────────────────────────────────────────── */
+.wrapper {
+  width: 100%;
+  max-width: 800px;
   display: flex;
-  gap: var(--spacing-lg);
+  flex-direction: column;
+  gap: 4px;
 }
 
-.main-nav a {
-  color: var(--color-white);
-  font-size: var(--font-size-sm);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
+/* ─── ROW 1: HEADER + MENU ───────────────────────────── */
+.row-1 {
+  display: flex;
+  gap: 4px;
 }
 
-.main-nav a:hover {
-  color: var(--color-primary);
-}
-
-/* ─── HERO SECTION ──────────────────────────────────────
-   Full width, tall section with background image effect
-─────────────────────────────────────────────────────── */
-.hero {
-  background: linear-gradient(135deg, #1d2d44 0%, #2d4a6e 100%);
-  color: var(--color-white);
-  padding: var(--spacing-xl) var(--spacing-lg);
-  min-height: 70vh;
+.header {
+  background: #1d2d44;
+  padding: 1.5rem 2rem;
+  width: 210px;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
 }
 
-.hero-content {
-  max-width: 800px;
-}
-
-.hero-content h2 {
-  font-size: var(--font-size-xl);
-  margin-bottom: var(--spacing-md);
-  line-height: 1.3;
-}
-
-.hero-content p {
-  font-size: var(--font-size-lg);
-  color: var(--color-muted);
-  margin-bottom: var(--spacing-lg);
-}
-
-.category {
-  color: var(--color-primary);
-  font-size: var(--font-size-sm);
-  font-weight: bold;
-  letter-spacing: 2px;
-  margin-bottom: var(--spacing-sm);
-}
-
-.btn {
-  display: inline-block;
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  padding: var(--spacing-sm) var(--spacing-lg);
-  border-radius: var(--border-radius);
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #c1121f;
-}
-
-/* ─── PAGE GRID ─────────────────────────────────────────
-   Main content (left) + Sidebar (right)
-   This is CSS Grid doing two-column layout
-─────────────────────────────────────────────────────── */
-.page-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: var(--spacing-lg);
-  max-width: var(--max-width);
-  margin: var(--spacing-lg) auto;
-  padding: 0 var(--spacing-lg);
-}
-
-/* ─── ARTICLES GRID ─────────────────────────────────────
-   2-column grid for article cards
-─────────────────────────────────────────────────────── */
-.articles-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-lg);
-}
-
-/* ─── CARD ──────────────────────────────────────────────
-   Individual blog post card
-─────────────────────────────────────────────────────── */
-.card {
-  background-color: var(--color-white);
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
-
-/* ─── IMAGE PLACEHOLDERS ─────────────────────────────── */
-.card-img {
-  width: 100%;
-  height: 200px;
-}
-
-.card-img.engineering {
-  background: linear-gradient(135deg, #1d2d44, #2d4a6e);
-}
-
-.card-img.technology {
-  background: linear-gradient(135deg, #e63946, #c1121f);
-}
-  
-.card-img.devops {
-  background: linear-gradient(135deg, #2d6a4f, #40916c);
-}
-
-.avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #1d2d44, #e63946);
-  margin-bottom: var(--spacing-sm);
-}
-
-.featured-img {
-  width: 100%;
-  height: 150px;
-  border-radius: var(--border-radius);
-  background: linear-gradient(135deg, #2d4a6e, #40916c);
-}
-
-.card-body {
-  padding: var(--spacing-md);
-}
-
-.card-body h3 {
-  font-size: 1.1rem;
-  margin-bottom: var(--spacing-sm);
-  line-height: 1.4;
-}
-
-.card-body p {
-  color: var(--color-muted);
-  font-size: var(--font-size-sm);
-  margin-bottom: var(--spacing-md);
-}
-
-.card-footer {
-  display: flex;
-  gap: var(--spacing-md);
-  font-size: var(--font-size-sm);
-  color: var(--color-muted);
-  border-top: 1px solid #eee;
-  padding-top: var(--spacing-sm);
-}
-
-/* ─── SIDEBAR ───────────────────────────────────────────
-   Right column sidebar sections
-─────────────────────────────────────────────────────── */
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-lg);
-}
-
-.sidebar-section {
-  background-color: var(--color-white);
-  border-radius: var(--border-radius);
-  padding: var(--spacing-md);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.sidebar-section h3 {
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: var(--spacing-md);
-  padding-bottom: var(--spacing-sm);
-  border-bottom: 2px solid var(--color-primary);
-}
-
-.sidebar-section ul {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
-}
-
-.sidebar-section ul a {
-  color: var(--color-text);
-  font-size: var(--font-size-sm);
-  transition: color 0.3s ease;
-}
-
-.sidebar-section ul a:hover {
-  color: var(--color-primary);
-}
-
-/* Tags list — horizontal wrap */
-.tags-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-sm);
-}
-
-.tags-list li a {
-  background-color: var(--color-light);
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: var(--font-size-sm);
-  border: 1px solid #ddd;
-  transition: all 0.3s ease;
-}
-
-.tags-list li a:hover {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  border-color: var(--color-primary);
-}
-
-/* ─── FOOTER ────────────────────────────────────────────
-   Full width banner with grid layout inside
-─────────────────────────────────────────────────────── */
-.site-footer {
-  background-color: var(--color-dark);
-  color: var(--color-white);
-  padding: var(--spacing-xl) var(--spacing-lg);
-  margin-top: var(--spacing-xl);
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-xl);
-  max-width: var(--max-width);
-  margin: 0 auto var(--spacing-lg);
-}
-
-.footer-grid h3,
-.footer-grid h4 {
-  color: var(--color-primary);
-  margin-bottom: var(--spacing-md);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.footer-grid ul {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
-}
-
-.footer-grid a {
-  color: var(--color-muted);
-  font-size: var(--font-size-sm);
-  transition: color 0.3s ease;
-}
-
-.footer-grid a:hover {
-  color: var(--color-white);
-}
-
-.footer-grid form {
-  display: flex;
-  gap: var(--spacing-sm);
-}
-
-.footer-grid input {
+.menu {
+  background: #e63946;
+  padding: 1.5rem 2rem;
   flex: 1;
-  padding: var(--spacing-sm);
-  border: none;
-  border-radius: var(--border-radius);
-  font-size: var(--font-size-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.footer-grid button {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  border: none;
-  padding: var(--spacing-sm) var(--spacing-md);
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+/* ─── ROW 2: HERO ────────────────────────────────────── */
+.hero {
+  font-size: 1.8rem;
+  background: #4a7fc1;
+  padding: 5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.footer-grid button:hover {
-  background-color: #c1121f;
+/* ─── ROW 3: MAIN + GAP + RIGHT COL ─────────────────── */
+.row-3 {
+  display: grid;
+  grid-template-columns: 1.8fr 1.5fr 1fr;
+  gap: 4px;
 }
 
-.copyright {
-  text-align: center;
-  color: var(--color-muted);
-  font-size: var(--font-size-sm);
-  border-top: 1px solid #2d3f56;
-  padding-top: var(--spacing-md);
-  max-width: var(--max-width);
-  margin: 0 auto;
+.main {
+  background: #1d2d44;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* ─── RESPONSIVE ────────────────────────────────────────
-   Mobile first — collapse layouts for small screens
-─────────────────────────────────────────────────────── */
-@media (max-width: 768px) {
-
-  /* Stack header vertically on mobile */
-  .site-header {
-    flex-direction: column;
-    gap: var(--spacing-md);
-    text-align: center;
-  }
-
-  /* Single column page layout on mobile */
-  .page-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Single column articles on mobile */
-  .articles-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Stack footer on mobile */
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Stack newsletter form on mobile */
-  .footer-grid form {
-    flex-direction: column;
-  }
-
-  /* Smaller hero text on mobile */
-  .hero-content h2 {
-    font-size: 1.5rem;
-  }
+.gap {
+  background: white;
 }
 
-@media (max-width: 480px) {
-  .main-nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--spacing-sm);
-  }
+.right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.image {
+  background: #b2dfdb;
+  color: #141414aa;
+  padding: 0.8rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.extra {
+  background: #40916c;
+  color: #141414aa;
+  padding: 0.8rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+/* ─── ROW 4: BANNER ──────────────────────────────────── */
+.banner {
+  background: #f4c261;
+  color: #333;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

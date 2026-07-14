@@ -1,577 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Day 3 — JS DOM Practice</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ Accordion</title>
 
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f8f9fa;
-      color: #333;
-    }
+<style>
 
-    /* ─── NAVBAR ─────────────────────────────────────── */
-    nav {
-      background: #1d2d44;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
 
-    .logo {
-      color: #e63946;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
+body{
+    background:#dcebff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
 
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
+.accordion{
+    width:800px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
 
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: color 0.3s ease;
-    }
+.item{
+    border-bottom:1px solid #2f4158;
+}
 
-    .nav-links a:hover { color: #e63946; }
+.question{
+    background:#1d2733;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px;
+    cursor:pointer;
+    transition:0.3s;
+}
 
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 4px;
-    }
+.question:hover{
+    background:#2a3748;
+}
 
-    .hamburger span {
-      width: 25px;
-      height: 3px;
-      background: white;
-      display: block;
-      transition: all 0.3s ease;
-    }
+.question h3{
+    font-size:24px;
+}
 
-    /* hamburger animation when open */
-    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+.icon{
+    font-size:24px;
+    transition:0.3s;
+}
 
-    /* ─── SECTIONS ───────────────────────────────────── */
-    section {
-      padding: 3rem 2rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
+.icon.rotate{
+    transform:rotate(90deg);
+}
 
-    h2 {
-      margin-bottom: 1.5rem;
-      color: #1d2d44;
-      border-bottom: 2px solid #e63946;
-      padding-bottom: 0.5rem;
-    }
+.answer{
+    background:white;
+    color:#555;
+    line-height:1.8;
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .4s ease;
+}
 
-    /* ─── COUNTER ────────────────────────────────────── */
-    .counter-box {
-      text-align: center;
-      padding: 2rem;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
+.answer p{
+    padding:25px;
+    font-size:18px;
+}
 
-    .counter-hint {
-      color: #6c757d;
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
+.answer.open{
+    max-height:250px;
+}
 
-    .counter-display {
-      font-size: 5rem;
-      font-weight: bold;
-      color: #1d2d44;
-      margin: 1rem 0;
-      transition: color 0.3s ease;
-    }
+</style>
 
-    .counter-display.positive { color: #2d6a4f; }
-    .counter-display.negative { color: #e63946; }
-
-    .counter-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-    }
-
-    .btn {
-      padding: 0.6rem 1.5rem;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 1rem;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-
-    .btn:hover { opacity: 0.85; transform: scale(1.05); }
-    .btn-increment { background: #2d6a4f; color: white; }
-    .btn-decrement { background: #e63946; color: white; }
-    .btn-reset { background: #6c757d; color: white; }
-
-    /* ─── FAQ ────────────────────────────────────────── */
-    .faq-item {
-      border-radius: 8px;
-      margin-bottom: 0.75rem;
-      overflow: hidden;
-    }
-
-    .faq-question {
-      padding: 1.2rem 1.5rem;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-weight: bold;
-      background: #1d2d44;
-      color: white;
-      user-select: none;
-      transition: background 0.3s ease;
-    }
-
-    .faq-question:hover { background: #2d4a6e; }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease, padding 0.3s ease;
-      background: white;
-      color: #555;
-      padding: 0 1.5rem;
-      line-height: 1.8;
-      font-size: 0.95rem;
-    }
-
-    .faq-answer.open {
-      max-height: 300px;
-      padding: 1.2rem 1.5rem;
-    }
-
-    .faq-icon {
-      font-size: 1.2rem;
-      transition: transform 0.3s ease;
-      color: white;
-    }
-
-    .faq-icon.rotated { transform: rotate(90deg); }
-
-    /* ─── MODAL ──────────────────────────────────────── */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.5);
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-overlay.open { display: flex; }
-
-    .modal {
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      max-width: 500px;
-      width: 90%;
-      position: relative;
-      animation: slideIn 0.3s ease;
-    }
-
-    @keyframes slideIn {
-      from { transform: translateY(-30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    .modal h3 {
-      margin-bottom: 1rem;
-      color: #1d2d44;
-      font-size: 1.3rem;
-    }
-
-    .modal p { color: #555; line-height: 1.6; }
-
-    .modal-close {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: #e63946;
-      line-height: 1;
-    }
-
-    .modal-close:hover { transform: scale(1.2); }
-
-    /* ─── KEY EVENTS ─────────────────────────────────── */
-    .key-display {
-      text-align: center;
-      padding: 2rem;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .key-display p { color: #6c757d; margin-bottom: 1rem; }
-
-    .key-pressed {
-      font-size: 4rem;
-      font-weight: bold;
-      color: #e63946;
-      min-height: 5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #f8f9fa;
-      border-radius: 8px;
-      margin: 1rem 0;
-      border: 2px dashed #ddd;
-      transition: all 0.1s ease;
-    }
-
-    .key-info {
-      color: #7d6c6f;
-      font-size: 0.9rem;
-      margin-top: 0.5rem;
-    }
-
-    /* ─── RESPONSIVE ─────────────────────────────────── */
-    @media (max-width: 768px) {
-      .hamburger { display: flex; }
-
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: #1d2d44;
-        padding: 1rem 2rem;
-        gap: 1rem;
-      }
-
-      .nav-links.open { display: flex; }
-
-      .counter-buttons { flex-direction: column; align-items: center; }
-      .btn { width: 200px; }
-    }
-  </style>
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
-    <div class="logo">DevBlog</div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#counter">Counter</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#modal">Modal</a></li>
-      <li><a href="#keys">Key Events</a></li>
-    </ul>
-  </nav>
+<div class="accordion">
 
-  <!-- COUNTER -->
-  <section id="counter">
-    <h2>Counter + Keyboard Events</h2>
-    <div class="counter-box">
-      <p class="counter-hint">
-        Click buttons or use keyboard:
-        <strong>↑ increment &nbsp;|&nbsp; ↓ decrement &nbsp;|&nbsp; R reset</strong>
-      </p>
-      <div class="counter-display" id="counterDisplay">0</div>
-      <div class="counter-buttons">
-        <button class="btn btn-decrement" id="decrement">− Decrement</button>
-        <button class="btn btn-reset" id="reset">Reset</button>
-        <button class="btn btn-increment" id="increment">+ Increment</button>
-      </div>
-    </div>
-  </section>
+    <div class="item">
 
-  <!-- FAQ ACCORDION -->
-  <section id="faq">
-    <h2>FAQ Accordion</h2>
+        <div class="question">
+            <h3>What is Codeconvey?</h3>
+            <span class="icon">&#9654;</span>
+        </div>
 
-    <div class="faq-item">
-      <div class="faq-question">
-        What is Node.js?
-        <span class="faq-icon">›</span>
-      </div>
-      <div class="faq-answer">
-        Node.js is a JavaScript runtime built on Chrome's V8 engine. It allows
-        you to run JavaScript on the server side, outside of a browser.
-      </div>
+        <div class="answer">
+            <p>
+                Codeconvey is a web design & development blog which provides tutorials,
+                inspiration, articles and latest web trends. It is the platform for
+                developers who want to learn modern web technologies.
+            </p>
+        </div>
+
     </div>
 
-    <div class="faq-item">
-      <div class="faq-question">
-        What is the difference between Stream and Buffer?
-        <span class="faq-icon">›</span>
-      </div>
-      <div class="faq-answer">
-        Buffer loads the entire file into memory at once. Stream reads the file
-        in small chunks, keeping memory usage low regardless of file size.
-      </div>
+    <div class="item">
+
+        <div class="question">
+            <h3>What we offer?</h3>
+            <span class="icon">&#9654;</span>
+        </div>
+
+        <div class="answer">
+            <p>
+                We provide tutorials on HTML, CSS, JavaScript, React, Node.js,
+                Express.js and Full Stack Development.
+            </p>
+        </div>
+
     </div>
 
-    <div class="faq-item">
-      <div class="faq-question">
-        What is git bisect?
-        <span class="faq-icon">›</span>
-      </div>
-      <div class="faq-answer">
-        Git bisect is a binary search tool that helps you find which commit
-        introduced a bug. You mark commits as good or bad and git narrows
-        down the culprit commit automatically.
-      </div>
+    <div class="item">
+
+        <div class="question">
+            <h3>Want to join?</h3>
+            <span class="icon">&#9654;</span>
+        </div>
+
+        <div class="answer">
+            <p>
+                Join our community and start your web development journey today.
+            </p>
+        </div>
+
     </div>
 
-    <div class="faq-item">
-      <div class="faq-question">
-        What is an ETag?
-        <span class="faq-icon">›</span>
-      </div>
-      <div class="faq-answer">
-        An ETag is a unique fingerprint assigned to an HTTP response. When
-        content hasn't changed, the server returns 304 Not Modified instead
-        of resending the full response — saving bandwidth.
-      </div>
-    </div>
+</div>
 
-    <div class="faq-item">
-      <div class="faq-question">
-        What is Husky?
-        <span class="faq-icon">›</span>
-      </div>
-      <div class="faq-answer">
-        Husky is a tool that sets up git hooks in Node.js projects. It runs
-        scripts like ESLint and Prettier automatically before every commit,
-        blocking bad code from entering the repository.
-      </div>
-    </div>
+<script>
 
-  </section>
+const questions = document.querySelectorAll(".question");
 
-  <!-- MODAL -->
-  <section id="modal">
-    <h2>Modal Dialog</h2>
-    <p style="margin-bottom: 1rem; color: #6c757d;">
-      Click the button to open a modal. Close it with the ✕ button,
-      clicking outside, or pressing Escape.
-    </p>
-    <button class="btn btn-increment" id="openModal">Open Modal</button>
+questions.forEach((question)=>{
 
-    <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true">
-      <div class="modal">
-        <button class="modal-close" id="closeModal" aria-label="Close modal">✕</button>
-        <h3>Week 1 Complete!</h3>
-        <p>
-          You've completed Week 1 of the Full Stack Launchpad covering
-          Node.js, terminal mastery, git, HTTP/API forensics, and
-          automation. Week 2 covers frontend fundamentals.
-        </p>
-      </div>
-    </div>
-  </section>
+    question.addEventListener("click",()=>{
 
-  <!-- KEY EVENTS -->
-  <section id="keys">
-    <h2>Keyboard Events</h2>
-    <div class="key-display">
-      <p>Press any key on your keyboard</p>
-      <div class="key-pressed" id="keyPressed">—</div>
-      <div class="key-info" id="keyInfo">
-        Key name and code will appear here
-      </div>
-    </div>
-  </section>
-
-  <script>
-    // ─── ES6 CONCEPTS ─────────────────────────────────────
-
-    // const — never reassigned
-    const APP_NAME = 'DevBlog';
-
-    // let — will be reassigned
-    let currentCount = 0;
-
-    // Arrow function — updates counter display
-    const updateDisplay = (value) => {
-      const display = document.getElementById('counterDisplay');
-      display.textContent = value;
-
-      // Change color based on value
-      display.className = 'counter-display';
-      if (value > 0) display.classList.add('positive');
-      if (value < 0) display.classList.add('negative');
-    };
-
-    // Array methods demo — logged to console (open DevTools to see)
-    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-    // map — transform every element
-    const doubled = numbers.map(n => n * 2);
-    console.log('map — doubled:', doubled);
-
-    // filter — keep elements that pass test
-    const evens = numbers.filter(n => n % 2 === 0);
-    console.log('filter — evens:', evens);
-
-    // reduce — collapse to single value
-    const sum = numbers.reduce((total, n) => total + n, 0);
-    console.log('reduce — sum:', sum);
-
-    // Destructuring
-    const person = { name: 'Mayank', role: 'Engineer', level: 'Junior' };
-    const { name, role } = person;
-    console.log('destructuring:', name, role);
-
-    // Spread operator
-    const colors = ['red', 'blue'];
-    const moreColors = [...colors, 'green', 'yellow'];
-    console.log('spread:', moreColors);
-
-    // ─── COUNTER ──────────────────────────────────────────
-    document.getElementById('increment').addEventListener('click', () => {
-      currentCount++;
-      updateDisplay(currentCount);
-    });
-
-    document.getElementById('decrement').addEventListener('click', () => {
-      currentCount--;
-      updateDisplay(currentCount);
-    });
-
-    document.getElementById('reset').addEventListener('click', () => {
-      currentCount = 0;
-      updateDisplay(currentCount);
-    });
-
-    // ─── KEYBOARD EVENTS ──────────────────────────────────
-    document.addEventListener('keydown', (event) => {
-      // Show key pressed in key display section
-      document.getElementById('keyPressed').textContent = event.key;
-      document.getElementById('keyInfo').textContent =
-        `Key: "${event.key}" | Code: "${event.code}"`;
-
-      // Control counter with arrow keys
-      if (event.key === 'ArrowUp') {
-        currentCount++;
-        updateDisplay(currentCount);
-      }
-      if (event.key === 'ArrowDown') {
-        currentCount--;
-        updateDisplay(currentCount);
-      }
-      if (event.key === 'r' || event.key === 'R') {
-        currentCount = 0;
-        updateDisplay(currentCount);
-      }
-
-      // Close modal with Escape
-      if (event.key === 'Escape') {
-        document.getElementById('modalOverlay').classList.remove('open');
-      }
-    });
-
-    // ─── NAVBAR TOGGLE ────────────────────────────────────
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      navLinks.classList.toggle('open');
-    });
-
-    // Close nav when clicking a link
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        navLinks.classList.remove('open');
-      });
-    });
-
-    // ─── FAQ ACCORDION ────────────────────────────────────
-    const faqQuestions = document.querySelectorAll('.faq-question');
-
-    faqQuestions.forEach((question) => {
-      question.addEventListener('click', () => {
         const answer = question.nextElementSibling;
-        const icon = question.querySelector('.faq-icon');
+        const icon = question.querySelector(".icon");
 
-        // Toggle this item
-        answer.classList.toggle('open');
-        icon.classList.toggle('rotated');
-
-        // Close all other items
-        faqQuestions.forEach((other) => {
-          if (other !== question) {
-            other.nextElementSibling.classList.remove('open');
-            other.querySelector('.faq-icon').classList.remove('rotated');
-          }
+        // Close all other answers
+        document.querySelectorAll(".answer").forEach((item)=>{
+            if(item!==answer){
+                item.classList.remove("open");
+            }
         });
-      });
+
+        // Reset all other arrows
+        document.querySelectorAll(".icon").forEach((item)=>{
+            if(item!==icon){
+                item.classList.remove("rotate");
+            }
+        });
+
+        // Toggle current answer
+        answer.classList.toggle("open");
+        icon.classList.toggle("rotate");
+
     });
 
-    // ─── MODAL ────────────────────────────────────────────
-    const modalOverlay = document.getElementById('modalOverlay');
+});
 
-    // Open
-    document.getElementById('openModal').addEventListener('click', () => {
-      modalOverlay.classList.add('open');
-    });
-
-    // Close with button
-    document.getElementById('closeModal').addEventListener('click', () => {
-      modalOverlay.classList.remove('open');
-    });
-
-    // Close by clicking outside modal
-    modalOverlay.addEventListener('click', (event) => {
-      if (event.target === modalOverlay) {
-        modalOverlay.classList.remove('open');
-      }
-    });
-
-    let a = 5;
-    let b = 10;
-    const result = a + b;
-    const result2 = result * 2;
-    console.log(result2) 
-  </script>
-
+</script>
 </body>
 </html>

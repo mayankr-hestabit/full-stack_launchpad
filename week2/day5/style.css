@@ -1,0 +1,232 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f7f7f7;
+}
+
+.container{
+    width:90%;
+    margin:40px auto;
+}
+
+/* ================= HEADER ================= */
+
+.top-section{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.heading{
+    font-size:28px;
+    color:#222;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.heading span{
+    width:40px;
+    height:3px;
+    background:#e63946;
+    display:block;
+}
+
+/* ================= SEARCH ================= */
+
+.search-box{
+    position:relative;
+}
+
+.search-box input{
+    width:320px;
+    padding:12px 45px 12px 15px;
+    border:1px solid #ddd;
+    outline:none;
+    border-radius:5px;
+    font-size:16px;
+}
+
+.search-box input:focus{
+    border-color:#ff4d4d;
+}
+
+.search-box i{
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#666;
+}
+
+/* ================= NAVIGATION ================= */
+
+nav{
+    display:flex;
+    justify-content:flex-end;
+    gap:25px;
+    margin-bottom:35px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    text-decoration:none;
+    color:#555;
+    font-size:15px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ff4d4d;
+}
+
+nav .active{
+    color:#ff4d4d;
+    border-bottom:2px solid #ff4d4d;
+    padding-bottom:5px;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+
+/* ================= CARD ================= */
+
+.card{
+    background:white;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+/* ================= IMAGE ================= */
+
+.image-box{
+    position:relative;
+    overflow:hidden;
+}
+
+.image-box img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.card:hover img{
+    transform:scale(1.08);
+}
+
+/* ================= BADGES ================= */
+
+.badge{
+    position:absolute;
+    top:10px;
+    left:10px;
+    color:white;
+    font-size:12px;
+    font-weight:bold;
+    padding:5px 10px;
+}
+
+.sale{
+    background:#d62828;
+}
+
+.new{
+    background:#2a9d8f;
+}
+
+.stock{
+    background:#222;
+}
+
+/* ================= CONTENT ================= */
+
+.content{
+    text-align:center;
+    padding:18px;
+}
+
+.content h3{
+    font-size:18px;
+    color:#333;
+    margin-bottom:8px;
+}
+
+.category{
+    color:#888;
+    font-size:14px;
+    margin-bottom:8px;
+    text-transform:capitalize;
+}
+
+.rating{
+    color:#f4b400;
+    margin-bottom:10px;
+    font-size:15px;
+}
+
+.price{
+    font-size:20px;
+    font-weight:bold;
+    color:#111;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:992px){
+
+.products{
+grid-template-columns:repeat(2,1fr);
+}
+
+.top-section{
+flex-direction:column;
+gap:20px;
+}
+
+.search-box input{
+width:100%;
+}
+
+}
+
+@media(max-width:600px){
+
+.products{
+grid-template-columns:1fr;
+}
+
+nav{
+justify-content:center;
+gap:15px;
+}
+
+.heading{
+font-size:24px;
+text-align:center;
+}
+
+.search-box{
+width:100%;
+}
+
+.search-box input{
+width:100%;
+}
+
+}
