@@ -1,63 +1,136 @@
-# Day 5 — Capstone: E-Commerce Product Listing
+# Product Listing App
 
-## What I Built
-A fully functional mini e-commerce product listing page with:
-- Real product data fetched from dummyjson.com API
-- Search, filter by category, sort by price/rating/discount
-- Sliding cart drawer with add/remove/quantity controls
-- Mobile responsive layout
+A responsive product listing application built using HTML, CSS, and JavaScript. Products are fetched from the DummyJSON API and displayed dynamically with search and category filtering.
 
-## Pages
-- `index.html` — Landing page with hero, features, CTA
-- `products.html` — Product listing with cart
+---
 
-## Key Concepts Used
+## Features
+
+- Fetch Products using Fetch API
+- Async/Await
+- Dynamic Product Cards
+- Live Search
+- Category Filter
+- Responsive Design
+- Debounced Search
+- Error Handling
+- Average Rating Calculation
+
+---
+
+## Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript (ES6)
+
+---
+
+## API Used
+
+DummyJSON Products API
+
+https://dummyjson.com/products
+
+---
+
+## Project Structure
+
+```
+Product-App/
+│
+├── index.html
+├── style.css
+├── script.js
+└── README.md
+```
+
+---
+
+## JavaScript Concepts Used
 
 ### Fetch API
-```javascript
-const response = await fetch('https://dummyjson.com/products?limit=100');
-const data = await response.json();
-```
-Same API we hit with curl in Week 1 Day 4 — now consumed in JavaScript.
+Used to retrieve product data from the server.
 
 ### Async/Await
-Pauses function execution until Promise resolves.
-Cleaner than .then() chaining for sequential async operations.
-
-### Array Methods
-- `map` — transform products array into HTML cards
-- `filter` — search and category filtering
-- `sort` — price/rating/discount sorting
-- `reduce` — calculate cart totals
-- `find` — locate specific product by ID
+Handles asynchronous API requests cleanly.
 
 ### DOM Manipulation
-- `innerHTML` — inject product cards into grid
-- `classList.add/remove` — open/close cart drawer
-- `createElement` — build category dropdown options
-- `dataset` — store product IDs in HTML attributes
+Creates product cards dynamically.
 
-### Event Listeners
-- `input` — search with debounce
-- `change` — category and sort dropdowns
-- `click` — add to cart, qty controls, remove
-- `keydown` — Escape to close cart
+### map()
+Converts product objects into HTML cards.
+
+### filter()
+Used for:
+- Live Search
+- Category Filtering
+
+### reduce()
+Calculates the average rating of displayed products.
 
 ### Debounce
-Search input debounced at 300ms —
-waits until user stops typing before filtering.
+Improves search performance by waiting for the user to stop typing before filtering.
 
-### Cart Logic
-- Checks if product already in cart → increases quantity
-- `reduce` calculates total items, subtotal, discount, final total
-- Quantity 0 → automatically removes item
+### Event Listeners
+Handles:
+- Search Input
+- Category Selection
 
+---
 
-## What I Learned
-- `fetch` is Promise-based — always use async/await with try/catch
-- `response.ok` checks HTTP status before parsing JSON
-- `loading="lazy"` on images improves page load performance
-- `Set` removes duplicates when building category list
-- Cart state lives in a JS array — same pattern as Todo app
-- `body.style.overflow = 'hidden'` prevents background scroll when drawer is open
-- Responsive grid: 4 cols desktop → 3 cols tablet → 2 cols mobile → 1 col small
+## Features Explained
+
+### Product Rendering
+
+Products are displayed dynamically using JavaScript.
+
+### Live Search
+
+Filters products instantly while typing.
+
+### Category Filter
+
+Displays products according to the selected category.
+
+### Responsive Layout
+
+Works on desktop, tablet, and mobile devices.
+
+### Error Handling
+
+Displays an error message if the API request fails.
+
+---
+
+## Concepts Covered
+
+- Fetch API
+- Async/Await
+- Promises
+- map()
+- filter()
+- reduce()
+- Debounce
+- DOM Manipulation
+- Event Handling
+- Responsive Design
+
+---
+
+## Future Improvements
+
+- Shopping Cart
+- Wishlist
+- Product Details Page
+- Pagination
+- Sorting
+- Dark Mode
+- Local Storage
+- Price Filter
+
+---
+
+## Author
+
+Mayank Raj
