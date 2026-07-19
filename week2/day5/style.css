@@ -24,18 +24,23 @@ body{
 }
 
 .heading{
-    font-size:28px;
-    color:#222;
-    display:flex;
-    align-items:center;
-    gap:10px;
+    font-size: 36px;
+    font-weight: bold;
 }
 
 .heading span{
-    width:40px;
-    height:3px;
-    background:#e63946;
-    display:block;
+    display: inline-block;
+    position: relative;
+}
+
+.heading span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: red;
 }
 
 /* ================= SEARCH ================= */
