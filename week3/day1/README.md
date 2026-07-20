@@ -62,7 +62,130 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Notes / Next Steps
+# Week 3 — Day 2: Adding Buttons, Badges and Cards to the Dashboard
 
-- Day 2 will introduce the reusable component library (`Button`, `Input`, `Card`, `Badge`, `Modal`) and stat cards inside the dashboard content area.
-- Dev-mode "N" indicator (bottom-left) disabled via `devIndicators: false` in `next.config.js` — dev-only Next.js tooling, not part of the shipped app.
+# UI Component Docs
+
+Usage reference for the reusable component library in `/components/ui/`.
+
+---
+
+## Button
+
+Variant + size driven button.
+
+```jsx
+import Button from "@/components/ui/Button";
+
+<Button variant="primary" size="md" onClick={() => console.log("clicked")}>
+  Save
+</Button>
+```
+
+**Props**
+| Prop | Type | Default | Options |
+|---|---|---|---|
+| `variant` | string | `"primary"` | `primary`, `warning`, `success`, `danger`, `secondary` |
+| `size` | string | `"md"` | `sm`, `md`, `lg` |
+| `disabled` | boolean | `false` | — |
+| `type` | string | `"button"` | `button`, `submit` |
+
+---
+
+## Input
+
+Controlled text input — value/onChange must be supplied by the parent.
+
+```jsx
+import Input from "@/components/ui/Input";
+import { useState } from "react";
+
+const [email, setEmail] = useState("");
+
+
+## Badge
+
+Small colored status label.
+
+```jsx
+import Badge from "@/components/ui/Badge";
+
+<Badge variant="success">Active</Badge>
+```
+
+**Props**
+| Prop | Type | Default | Options |
+|---|---|---|---|
+| `variant` | string | `"neutral"` | `primary`, `warning`, `success`, `danger`, `neutral` |
+
+---
+
+## Card
+
+Flexible container. Plain mode or colored "stat card" mode with a footer slot.
+
+```jsx
+import Card from "@/components/ui/Card";
+import { ChevronRight } from "lucide-react";
+
+// Plain card
+<Card>
+  <p>Any content here</p>
+</Card>
+
+// Colored stat card with footer
+<Card
+  color="primary"
+  footer={
+    <div className="flex w-full items-center justify-between">
+      <span>View Details</span>
+      <ChevronRight size={14} />
+    </div>
+  }
+>
+  <p className="text-lg font-semibold">Primary Card</p>
+</Card>
+```
+
+**Props**
+| Prop | Type | Default | Options |
+|---|---|---|---|
+| `color` | string | `"none"` | `primary`, `warning`, `success`, `danger`, `none` |
+| `footer` | ReactNode | — | any JSX, rendered in a separate footer strip |
+
+---
+
+## Modal
+
+Controlled dialog. Parent owns the `open` boolean.
+
+```jsx
+import Modal from "@/components/ui/Modal";
+import { useState } from "react";
+
+const [open, setOpen] = useState(false);
+
+<>
+  <Button onClick={() => setOpen(true)}>Open Modal</Button>
+
+  <Modal open={open} onClose={() => setOpen(false)} title="Confirm Action">
+    <p>Are you sure?</p>
+  </Modal>
+</>
+```
+
+**Props**
+| Prop | Type | Required |
+|---|---|---|
+| `open` | boolean | Yes |
+| `onClose` | function | Yes |
+| `title` | string | No |
+| `children` | ReactNode | Yes (modal body content) |
+
+---
+
+## Design Principles Used
+
+- **Controlled components** — Input and Modal never manage their own open/value state internally; the parent always owns it and passes it down. Keeps data flow predictable (unidirectional).
+- **Variant props over separate components** — one `Button`/`Badge`/`Card` component handles all color states via a `variant`/`color` prop, instead of `PrimaryButton`, `WarningButton`, etc.
+- **Composition via `children`** — Card and Modal accept arbitrary JSX as children rather than fixed fields, so they stay reusable across very different content.
