@@ -1,17 +1,14 @@
 import "./globals.css";
-import DashboardShell from "@/components/ui/DashboardShell";
 
 export const metadata = {
-  title: "Dashboard | Week 3 Launchpad",
-  description: "Next.js + Tailwind dashboard skeleton",
+  title: "Week 3 Launchpad",
+  description: "Next.js + Tailwind — Week 3 project",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-slate-100">
-        <DashboardShell>{children}</DashboardShell>
-      </body>
+      <body className="bg-slate-100">{children}</body>
     </html>
   );
 }
