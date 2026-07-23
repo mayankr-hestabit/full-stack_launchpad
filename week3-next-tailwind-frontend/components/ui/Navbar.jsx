@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { Menu, Search, UserCircle, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
@@ -44,9 +46,9 @@ export default function Navbar({ onToggleSidebar }) {
 
           {menuOpen && (
             <div className="absolute right-0 mt-2 w-40 rounded-md bg-white py-1 text-sm text-slate-700 shadow-lg">
-              <a href="#" className="block px-4 py-2 hover:bg-slate-100">Profile</a>
-              <a href="#" className="block px-4 py-2 hover:bg-slate-100">Settings</a>
-              <a href="#" className="block px-4 py-2 hover:bg-slate-100">Logout</a>
+              <Link href="/dashboard/profile" className="block px-4 py-2 hover:bg-slate-100">Profile</Link>
+              <Link href="/#" className="block px-4 py-2 hover:bg-slate-100">Settings</Link>
+              <Link href="/login" className="block px-4 py-2 hover:bg-slate-100">Logout</Link>
             </div>
           )}
         </div>

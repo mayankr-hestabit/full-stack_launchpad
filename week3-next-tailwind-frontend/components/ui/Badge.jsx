@@ -8,10 +8,10 @@ const badgeStyles = {
   neutral: "bg-slate-100 text-slate-700",
 };
 
-export default function Badge({ children, variant = "neutral" }) {
+export default function Badge({ children, variant = "neutral", className = "" }) {
   return (
     <span
-      className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${badgeStyles[variant]}`}
+      className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${badgeStyles[variant]} ${className}`}
     >
       {children}
     </span>

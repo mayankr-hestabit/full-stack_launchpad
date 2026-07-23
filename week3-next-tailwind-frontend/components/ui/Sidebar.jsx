@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Columns, FileText, ChevronDown, BarChart2, Table, User } from "lucide-react";
+import { LayoutDashboard, Columns, FileText, ChevronDown, BarChart2, Table, User, Users } from "lucide-react";
 import { useState } from "react";
 
 function SidebarSectionLabel({ children }) {
@@ -68,6 +68,7 @@ export default function Sidebar({ open }) {
       <nav className="py-2">
         <SidebarSectionLabel>Core</SidebarSectionLabel>
         <SidebarNavLink icon={LayoutDashboard} label="Dashboard" href="/dashboard" />
+        <SidebarNavLink icon={Users} label="Users" href="/dashboard/users" />
         <SidebarNavLink icon={User} label="Profile" href="/dashboard/profile" />
 
         <SidebarSectionLabel>Interface</SidebarSectionLabel>

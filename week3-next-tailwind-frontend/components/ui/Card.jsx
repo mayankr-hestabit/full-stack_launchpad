@@ -11,10 +11,10 @@ const colorStyles = {
   none: "bg-white text-slate-800 border border-slate-200",
 };
 
-export default function Card({ children, color = "none", footer, className = "" }) {
+export default function Card({ children, color = "none", footer, className = "", bodyClassName = "p-4" }) {
   return (
     <div className={`overflow-hidden rounded-lg shadow-sm ${colorStyles[color]} ${className}`}>
-      <div className="p-4">{children}</div>
+      <div className={bodyClassName}>{children}</div>
 
       {footer && (
         <div
