@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { createUser, getUsers, getUserById, updateUser, deleteUser } from "../controllers/userController.js";
 
 const router = Router();
 
@@ -18,5 +19,20 @@ router.get("/health", (req, res) => {
     status: "Server is healthy ✅",
   });
 });
+
+// Create user
+router.post("/users", createUser);
+
+// Get all users
+router.get("/users", getUsers);
+
+// Get specific user by its id
+router.get("/users/:id", getUserById);
+
+// Update user
+router.put("/users/:id", updateUser);
+
+// Delete user
+router.delete("/users/:id", deleteUser);
 
 export default router;
