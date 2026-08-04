@@ -6,6 +6,8 @@ import {
   corsMiddleware,
   rateLimiter,
 } from "../middlewares/security.js";
+import requestTracing from "../utils/tracing.js";
+
 
 const createApp = () => {
   const app = express();
@@ -17,6 +19,7 @@ const createApp = () => {
 
   // Middleware
   app.use(express.json({ limit: "10kb" }));
+  app.use(requestTracing);
 
   // Routes
   app.use("/", routes);
