@@ -1,5 +1,8 @@
 import { Router } from "express";
 import { createUser, getUsers, getUserById, updateUser, deleteUser } from "../controllers/userController.js";
+import productRoutes from "./product.routes.js";
+import validate from "../middlewares/validate.js";
+import { createUserSchema, updateUserSchema } from "../validations/user.validation.js";
 
 const router = Router();
 
@@ -21,7 +24,7 @@ router.get("/health", (req, res) => {
 });
 
 // Create user
-router.post("/users", createUser);
+router.post("/users", validate(createUserSchema), createUser);
 
 // Get all users
 router.get("/users", getUsers);
@@ -30,9 +33,12 @@ router.get("/users", getUsers);
 router.get("/users/:id", getUserById);
 
 // Update user
-router.put("/users/:id", updateUser);
+router.put("/users/:id",validate(updateUserSchema), updateUser);
 
 // Delete user
 router.delete("/users/:id", deleteUser);
+
+// for products
+router.use("/products", productRoutes);
 
 export default router;

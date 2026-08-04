@@ -4,8 +4,8 @@ export const createProduct = async (productData) => {
   return await Product.create(productData);
 };
 
-export const getAllProducts = async () => {
-  return await Product.find();
+export const getAllProducts = async (filter, sort, skip, limit) => {
+  return await Product.find(filter).sort(sort).skip(skip).limit(limit);
 };
 
 export const getProductById = async (id) => {
@@ -20,5 +20,13 @@ export const updateProduct = async (id, productData) => {
 };
 
 export const deleteProduct = async (id) => {
-  return await Product.findByIdAndDelete(id);
+  return await Product.findByIdAndUpdate(
+    id,
+    {
+      isDeleted: true,
+    },
+    {
+      new: true,
+    }
+  );
 };
