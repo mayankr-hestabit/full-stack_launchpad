@@ -1,0 +1,710 @@
+# Week 5 — Server Side Foundations with Docker & DevOps Basics
+
+## Objective
+
+The objective of Week 5 is to understand how production servers work by using Docker to simulate deployment environments locally.
+
+The week covers:
+
+* Docker fundamentals
+* Linux internals inside containers
+* Docker Compose
+* Multi-container applications
+* Docker networking
+* Persistent volumes
+* NGINX reverse proxy
+* Load balancing
+* SSL/TLS
+* HTTPS
+* CI-style deployment automation
+* Production-style Docker configuration
+
+---
+
+# Day 1 — Docker Fundamentals + Linux Internals
+
+## Topics to Learn
+
+* [ ] Docker Images
+* [ ] Docker Containers
+* [ ] Docker Volumes
+* [ ] Docker Networks
+* [ ] Users inside containers
+* [ ] Permissions
+* [ ] Logs
+* [ ] Processes inside containers
+* [ ] Dockerfile basics
+
+## Main Exercise
+
+Containerize and run the Node.js application.
+
+### Tasks
+
+* [ ] Create a `Dockerfile`
+* [ ] Build a Docker image for the Node.js application
+* [ ] Run the Node.js application inside a Docker container
+* [ ] Verify that the application is running
+* [ ] Identify the running container
+* [ ] Enter the container using:
+
+```bash
+docker exec -it <container> /bin/sh
+```
+
+## Linux Exploration Inside Container
+
+Once inside the container, explore:
+
+```bash
+ls
+ps
+top
+```
+
+Also investigate:
+
+* [ ] File/document structure
+* [ ] Users
+* [ ] Permissions
+* [ ] Running processes
+* [ ] Disk usage
+* [ ] Container logs
+
+## Day 1 Deliverables
+
+```text
+Dockerfile
+linux-in-container.md
+```
+
+## Day 1 Completion Check
+
+* [ ] Node application successfully runs inside Docker
+* [ ] Can enter the container using `docker exec`
+* [ ] Explored Linux commands inside the container
+* [ ] Checked processes
+* [ ] Checked disk usage
+* [ ] Checked logs
+* [ ] Documented findings in `linux-in-container.md`
+* [ ] `Dockerfile` completed
+
+---
+
+# Day 2 — Docker Compose + Multi-Container Apps
+
+## Topics to Learn
+
+* [ ] Docker networking
+* [ ] Docker volumes
+* [ ] Persistent storage
+* [ ] Docker Compose
+* [ ] Multi-container applications
+* [ ] Communication between containers
+
+## Required Application Architecture
+
+Deploy the following services:
+
+```text
+React Client
+     |
+     v
+Node Server
+     |
+     v
+MongoDB
+```
+
+The three services should run as containers.
+
+## Main Exercise
+
+The complete application should start using:
+
+```bash
+docker compose up -d
+```
+
+## Tasks
+
+### Client
+
+* [ ] Containerize the React client
+* [ ] Make the client available through Docker Compose
+
+### Server
+
+* [ ] Containerize the Node.js server
+* [ ] Configure the server through Docker Compose
+* [ ] Ensure the server can communicate with MongoDB
+
+### MongoDB
+
+* [ ] Run MongoDB as a container
+* [ ] Configure persistent storage using a Docker volume
+
+### Networking
+
+* [ ] Configure Docker networking
+* [ ] Ensure the Node server connects to MongoDB through container networking
+* [ ] Do not rely on host-based MongoDB communication for the container-to-container connection
+
+### Logs
+
+* [ ] Ensure logs are exposed correctly
+* [ ] Verify service logs
+
+### Compose
+
+* [ ] Create `docker-compose.yml`
+* [ ] Configure all required services
+* [ ] Start the complete stack with:
+
+```bash
+docker compose up -d
+```
+
+## Day 2 Deliverables
+
+```text
+docker-compose.yml
+service-architecture.md
+```
+
+## Day 2 Completion Check
+
+* [ ] React container running
+* [ ] Node container running
+* [ ] MongoDB container running
+* [ ] All services communicate correctly
+* [ ] Server connects to MongoDB through container networking
+* [ ] MongoDB volume mapped
+* [ ] Data persistence verified
+* [ ] Logs exposed correctly
+* [ ] `docker compose up -d` starts the stack successfully
+* [ ] Architecture documented in `service-architecture.md`
+
+---
+
+# Day 3 — NGINX Reverse Proxy + Load Balancing
+
+## Topics to Learn
+
+* [ ] NGINX inside Docker
+* [ ] Reverse proxy
+* [ ] Routing requests to internal containers
+* [ ] Backend replicas
+* [ ] Load balancing
+* [ ] Round-robin load balancing
+
+## Required Architecture
+
+Run two instances of the backend.
+
+```text
+                     ┌──> Backend Instance 1
+                     |
+Client ──> NGINX ────┤
+                     |
+                     └──> Backend Instance 2
+```
+
+NGINX acts as the reverse proxy.
+
+## Required Routing
+
+Configure:
+
+```text
+/api → backend-service:3000
+```
+
+## Main Exercise
+
+* [ ] Create an NGINX container
+* [ ] Run backend instance 1
+* [ ] Run backend instance 2
+* [ ] Put NGINX and backend containers on the appropriate Docker network
+* [ ] Configure NGINX as a reverse proxy
+* [ ] Configure `/api` routing
+* [ ] Enable round-robin load balancing
+* [ ] Send multiple requests
+* [ ] Verify requests are distributed between backend instances
+
+## Day 3 Deliverables
+
+```text
+nginx.conf
+reverse-proxy-readme.md
+```
+
+## Day 3 Completion Check
+
+* [ ] NGINX container running
+* [ ] Backend instance 1 running
+* [ ] Backend instance 2 running
+* [ ] NGINX can communicate with backend containers
+* [ ] `/api` routes correctly
+* [ ] Reverse proxy works
+* [ ] Round-robin load balancing enabled
+* [ ] Both backend instances receive requests
+* [ ] `nginx.conf` completed
+* [ ] `reverse-proxy-readme.md` completed
+
+---
+
+# Day 4 — SSL + Self-Signed + mkcert + HTTPS
+
+## Topics to Learn
+
+* [ ] SSL fundamentals
+* [ ] TLS fundamentals
+* [ ] SSL/TLS certificates
+* [ ] Self-signed certificates
+* [ ] mkcert
+* [ ] Certificates inside containers
+* [ ] HTTPS termination at NGINX
+* [ ] HTTP → HTTPS redirection
+
+## Main Exercise
+
+Generate a self-signed certificate using `mkcert`.
+
+Then configure NGINX to serve the application through HTTPS.
+
+## Required Flow
+
+```text
+HTTP
+ |
+ | redirect
+ v
+HTTPS
+ |
+ v
+NGINX
+ |
+ v
+Backend
+```
+
+## Tasks
+
+### Certificate
+
+* [ ] Generate a self-signed certificate using `mkcert`
+* [ ] Configure the generated certificate
+* [ ] Make the certificate available to NGINX
+
+### NGINX
+
+* [ ] Configure HTTPS
+* [ ] Configure SSL/TLS certificates
+* [ ] Configure HTTPS termination at NGINX
+* [ ] Force HTTP → HTTPS redirect
+
+### Browser Verification
+
+* [ ] Open the application using the local domain
+* [ ] Confirm HTTPS is working
+* [ ] Confirm the browser shows the lock icon
+* [ ] Capture the HTTPS working screenshot
+
+## Day 4 Deliverables
+
+```text
+Certificates
+ssl-setup.md
+HTTPS working screenshot
+```
+
+## Day 4 Completion Check
+
+* [ ] Certificate generated with mkcert
+* [ ] Certificate configured for NGINX
+* [ ] HTTPS working
+* [ ] HTTP redirects to HTTPS
+* [ ] Local domain configured
+* [ ] Browser lock icon confirmed
+* [ ] Screenshot captured
+* [ ] `ssl-setup.md` completed
+
+---
+
+# Day 5 — CI-Style Deployment Automation + Capstone
+
+## Topics to Learn
+
+* [ ] Docker volumes
+* [ ] Compose profiles
+* [ ] `.env` configuration
+* [ ] Log rotation
+* [ ] Health checks
+* [ ] Container restart policies
+* [ ] Deployment automation
+
+---
+
+# Day 5 Capstone
+
+## Objective
+
+Deploy a complete full-stack application in Docker with:
+
+```text
+Full-Stack Application
+        |
+        v
+    Docker Compose
+        |
+        v
+      NGINX
+        |
+        +------> Backend 1
+        |
+        +------> Backend 2
+        |
+        v
+     MongoDB
+        |
+        v
+ Persistent Volume
+```
+
+The deployment must include:
+
+* Reverse proxy
+* HTTPS
+* Production-style configuration
+* Health checks
+* Restart policy
+* Environment configuration
+* Deployment automation
+
+---
+
+# Production Configuration
+
+## 1. Production Compose File
+
+Create:
+
+```text
+docker-compose.prod.yml
+```
+
+* [ ] Create production-specific Compose configuration
+* [ ] Configure the production services
+* [ ] Ensure the complete application stack can run using the production configuration
+
+---
+
+## 2. Environment Configuration
+
+Use:
+
+```text
+.env
+```
+
+for secrets/configuration.
+
+* [ ] Store required secrets in `.env`
+* [ ] Do not hard-code secrets into configuration files
+* [ ] Ensure `.env` is not committed to Git
+
+Example Git protection:
+
+```text
+.env
+```
+
+should be included in `.gitignore`.
+
+---
+
+## 3. Health Checks
+
+Configure health checks in Compose.
+
+* [ ] Add health check
+* [ ] Ensure services can report their health
+* [ ] Verify health status
+
+---
+
+## 4. Container Restart Policy
+
+Configure restart policies.
+
+* [ ] Add container restart policy
+* [ ] Verify containers can restart according to the configured policy
+
+---
+
+## 5. Log Rotation
+
+Configure:
+
+* [ ] Log rotation
+* [ ] Prevent uncontrolled log growth
+
+---
+
+## 6. Docker Volumes
+
+* [ ] Configure required Docker volumes
+* [ ] Ensure persistent data survives container recreation where required
+
+---
+
+## 7. Compose Profiles
+
+* [ ] Configure Compose profiles
+* [ ] Understand how profiles can control which services are started
+
+---
+
+# Deployment Automation
+
+Create a deployment script.
+
+The script should automate the deployment process.
+
+* [ ] Create deployment script
+* [ ] Configure Docker/Compose commands
+* [ ] Use production configuration
+* [ ] Start/recreate required services
+* [ ] Verify deployment
+* [ ] Test application after deployment
+
+---
+
+# Day 5 Final Checklist
+
+* [ ] `docker-compose.prod.yml` created
+* [ ] `.env` configured
+* [ ] Secrets are not committed
+* [ ] Healthcheck configured
+* [ ] Restart policy configured
+* [ ] Docker volumes configured
+* [ ] Compose profiles configured
+* [ ] Log rotation configured
+* [ ] Deployment script created
+* [ ] Full application stack working
+* [ ] Reverse proxy working
+* [ ] HTTPS working
+* [ ] Backend routing working
+* [ ] MongoDB working
+* [ ] Application tested
+
+---
+
+# Day 5 Deliverables
+
+```text
+docker-compose.prod.yml
+.env
+deployment script
+production-guide.md
+```
+
+Also required:
+
+```text
+Fully working application stack
+```
+
+Optional:
+
+```text
+Demo recording
+```
+
+---
+
+# Complete Week 5 Deliverables
+
+At the end of Week 5, the project should contain the following major deliverables:
+
+```text
+week5/
+│
+├── Dockerfile
+├── linux-in-container.md
+│
+├── docker-compose.yml
+├── service-architecture.md
+│
+├── nginx.conf
+├── reverse-proxy-readme.md
+│
+├── certificates/
+│   └── ...
+│
+├── ssl-setup.md
+├── https-working-screenshot
+│
+├── docker-compose.prod.yml
+├── .env
+├── deployment-script
+└── production-guide.md
+```
+
+---
+
+# Week 5 Final Architecture
+
+By the end of the week, the concepts learned across all five days should come together into a production-style local deployment:
+
+```text
+                         Browser
+                            |
+                            | HTTPS
+                            v
+                     ┌─────────────┐
+                     │    NGINX    │
+                     │             │
+                     │ SSL/TLS     │
+                     │ Termination │
+                     │ Reverse     │
+                     │ Proxy       │
+                     └──────┬──────┘
+                            |
+                  /api + Load Balancing
+                            |
+                 ┌──────────┴──────────┐
+                 |                     |
+                 v                     v
+          ┌─────────────┐       ┌─────────────┐
+          │  Backend 1  │       │  Backend 2  │
+          │   Node.js   │       │   Node.js   │
+          └──────┬──────┘       └──────┬──────┘
+                 |                     |
+                 └──────────┬──────────┘
+                            |
+                            v
+                     ┌─────────────┐
+                     │   MongoDB   │
+                     │   Volume    │
+                     └─────────────┘
+
+                 All managed by Docker
+                       Compose
+```
+
+---
+
+# Week 5 Progress Tracker
+
+## Day 1
+
+* [ ] Docker fundamentals
+* [ ] Linux internals
+* [ ] Dockerfile
+* [ ] Node container
+* [ ] Container exploration
+* [ ] `linux-in-container.md`
+
+**Status:** ⬜ Not Started
+
+---
+
+## Day 2
+
+* [ ] Docker networking
+* [ ] Docker volumes
+* [ ] React container
+* [ ] Node container
+* [ ] MongoDB container
+* [ ] Docker Compose
+* [ ] `docker-compose.yml`
+* [ ] `service-architecture.md`
+
+**Status:** ⬜ Not Started
+
+---
+
+## Day 3
+
+* [ ] NGINX container
+* [ ] Reverse proxy
+* [ ] Two backend replicas
+* [ ] `/api` routing
+* [ ] Round-robin load balancing
+* [ ] `nginx.conf`
+* [ ] `reverse-proxy-readme.md`
+
+**Status:** ⬜ Not Started
+
+---
+
+## Day 4
+
+* [ ] SSL/TLS
+* [ ] mkcert
+* [ ] Self-signed certificate
+* [ ] NGINX HTTPS
+* [ ] HTTP → HTTPS redirect
+* [ ] Local domain
+* [ ] Lock icon
+* [ ] Screenshot
+* [ ] `ssl-setup.md`
+
+**Status:** ⬜ Not Started
+
+---
+
+## Day 5
+
+* [ ] Docker volumes
+* [ ] Compose profiles
+* [ ] `.env`
+* [ ] Log rotation
+* [ ] Health checks
+* [ ] Restart policy
+* [ ] Production Compose
+* [ ] Deployment script
+* [ ] Full-stack deployment
+* [ ] Reverse proxy + HTTPS
+* [ ] `production-guide.md`
+* [ ] Optional demo recording
+
+**Status:** ⬜ Not Started
+
+---
+
+# Final Week 5 Goal
+
+By the end of Week 5:
+
+```text
+Docker Fundamentals
+        ↓
+Linux inside Containers
+        ↓
+Docker Compose
+        ↓
+Multi-Container Application
+        ↓
+NGINX Reverse Proxy
+        ↓
+Load Balancing
+        ↓
+SSL/TLS
+        ↓
+HTTPS
+        ↓
+Production Configuration
+        ↓
+Health Checks + Restart Policies
+        ↓
+Deployment Automation
+        ↓
+        CAPSTONE
+        ↓
+Fully Working Dockerized Full-Stack Application
+```
+
+This is the complete Day 1 → Day 5 task roadmap from the Week 5 requirements.
