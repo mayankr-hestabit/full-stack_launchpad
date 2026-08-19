@@ -1,0 +1,334 @@
+Week 6 — Day 1 Execution Phases
+
+Purpose
+
+Day 1 establishes the data foundation for the Week 6 ML engineering project.
+
+The Day 1 flow is:
+
+Raw Dataset → Data Loading → Inspection → Cleaning → Processed Dataset → EDA → Documentation → Checkpoint → Git Commit
+
+The project will continue evolving across Days 2–5. Day 2 will consume the processed dataset created on Day 1.
+
+Phase 1 — Prepare the Dataset
+
+Step 1 — Obtain the Dataset
+
+Select the dataset that will be used throughout Week 6.
+
+The dataset should ideally provide:
+
+Numerical features
+
+Categorical features
+
+A clear target
+
+Enough records for meaningful analysis
+
+The dataset must support the later Week 6 exercises, including feature engineering and classification-model evaluation.
+
+Step 2 — Put the Original Dataset in data/raw
+
+Example:
+
+data/raw/dataset.csv
+
+The raw dataset should be treated as the original source of truth.
+
+Do not manually modify the raw file.
+
+Phase 2 — Dataset Inspection
+
+Step 3 — Build the Data Loader
+
+Create:
+
+pipelines/data_pipeline.py
+
+Initial responsibility:
+
+data/raw/dataset.csv
+        ↓
+     load
+        ↓
+   DataFrame
+
+At first, focus on loading rather than cleaning.
+
+Step 4 — Inspect the Dataset
+
+Determine:
+
+Number of rows
+
+Number of columns
+
+Column names
+
+Data types
+
+Missing values
+
+Duplicate rows
+
+Target column
+
+Numerical columns
+
+Categorical columns
+
+This creates the initial data profile.
+
+Phase 3 — Data Cleaning
+
+Step 5 — Handle Missing Values
+
+Inspect missing values column by column.
+
+Depending on the data, evaluate appropriate strategies such as:
+
+Mean
+
+Median
+
+Interpolation
+
+Do not blindly apply one strategy to every column.
+
+Record the cleaning decisions.
+
+Step 6 — Handle Duplicates
+
+Detect duplicate rows.
+
+Remove duplicates where appropriate.
+
+Record:
+
+Number of duplicate rows found
+
+Number removed
+
+Final row count
+
+Step 7 — Detect and Handle Outliers
+
+Use the techniques covered in Day 1:
+
+Z-score
+
+IQR
+
+Important:
+
+Detection does not automatically mean deletion.
+
+Inspect the detected observations and decide how they should be handled based on the dataset.
+
+Record the decision.
+
+Step 8 — Analyze Class Imbalance
+
+Inspect the target distribution.
+
+Determine whether the target classes are imbalanced.
+
+The Week 6 concepts include:
+
+SMOTE
+
+Class weights
+
+Do not apply them blindly. First understand the actual target distribution and determine whether imbalance requires treatment.
+
+Phase 4 — Create the Processed Dataset
+
+Step 9 — Save the Cleaned Data
+
+The pipeline should transform:
+
+data/raw/dataset.csv
+        ↓
+pipelines/data_pipeline.py
+        ↓
+data/processed/final.csv
+
+Required output:
+
+data/processed/final.csv
+
+This processed dataset becomes an input for later Week 6 stages.
+
+Phase 5 — Exploratory Data Analysis
+
+Step 10 — Create the EDA Notebook
+
+Create:
+
+notebooks/EDA.ipynb
+
+Use the cleaned/processed data for analysis.
+
+Step 11 — Generate Feature Distributions
+
+Analyze relevant numerical features.
+
+Look for:
+
+Skew
+
+Concentration
+
+Extreme values
+
+Unusual distributions
+
+Step 12 — Generate the Correlation Matrix
+
+Analyze relationships between relevant numerical features.
+
+Use this to understand possible relationships and redundancy before later feature engineering.
+
+Step 13 — Generate Target Distribution
+
+Visualize the target distribution.
+
+For classification, inspect the number/proportion of examples in each class.
+
+This also provides evidence for the class-imbalance analysis.
+
+Step 14 — Generate Missing-Values Heatmap
+
+Create a heatmap showing the location/pattern of missing values.
+
+This is one of the required Day 1 EDA outputs.
+
+Phase 6 — Documentation
+
+Step 15 — Create DATA-REPORT.md
+
+Document the Day 1 findings.
+
+Recommended sections:
+
+1. Dataset Overview
+2. Data Quality Findings
+3. Missing Values
+4. Duplicate Analysis
+5. Outlier Analysis
+6. Target Distribution
+7. Feature Distributions
+8. Correlation Analysis
+9. Cleaning Decisions
+10. Processed Dataset
+
+The report should explain what was found and what decisions were made, not merely contain screenshots.
+
+Phase 7 — Day 1 Checkpoint
+
+Before declaring Day 1 complete, verify:
+
+Data Pipeline
+
+Dataset exists in data/raw
+
+Dataset loads successfully
+
+Dataset inspection completed
+
+Missing values analyzed
+
+Missing values handled appropriately
+
+Duplicates analyzed
+
+Duplicates handled appropriately
+
+Outliers analyzed
+
+Outliers handled appropriately
+
+Target distribution analyzed
+
+Class imbalance assessed
+
+data/processed/final.csv generated
+
+EDA
+
+Correlation matrix generated
+
+Feature distributions generated
+
+Target distribution generated
+
+Missing-values heatmap generated
+
+Required Deliverables
+
+pipelines/data_pipeline.py
+notebooks/EDA.ipynb
+data/processed/final.csv
+DATA-REPORT.md
+
+Phase 8 — Git Checkpoint
+
+Only commit after the Day 1 checkpoint passes.
+
+git add .
+git commit -m "Day 1: data pipeline and EDA completed"
+
+The Day 1 commit becomes the stable checkpoint before beginning Day 2.
+
+Final Day 1 Execution Order
+
+Follow this exact order:
+
+1. Create Week 6 project
+        ↓
+2. Create project architecture
+        ↓
+3. Select dataset
+        ↓
+4. Put dataset in data/raw
+        ↓
+5. Build data loader
+        ↓
+6. Inspect dataset
+        ↓
+7. Handle missing values
+        ↓
+8. Handle duplicates
+        ↓
+9. Detect and handle outliers
+        ↓
+10. Analyze class imbalance
+        ↓
+11. Generate data/processed/final.csv
+        ↓
+12. Build EDA notebook
+        ↓
+13. Generate correlation matrix
+        ↓
+14. Generate feature distributions
+        ↓
+15. Generate target distribution
+        ↓
+16. Generate missing-values heatmap
+        ↓
+17. Create DATA-REPORT.md
+        ↓
+18. Run Day 1 checkpoint
+        ↓
+19. Commit Day 1
+
+Tutor Execution Rule
+
+We will not implement all phases at once.
+
+For each step:
+
+Concept → Explanation → Implementation → Test → Checkpoint → Next Step
+
+The next step begins only after the current step is working and understood.
