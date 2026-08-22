@@ -1,0 +1,17 @@
+[
+    "numerical__income_per_age",
+    "numerical__satisfaction_score",
+    "numerical__income",
+    "numerical__income_log",
+    "numerical__age",
+    "numerical__spend_per_tenure",
+    "numerical__contract_months",
+    "numerical__tenure_years",
+    "categorical__plan_Standard",
+    "categorical__plan_Premium",
+    "categorical__city_Jaipur",
+    "numerical__support_calls",
+    "numerical__login_frequency",
+    "categorical__city_Bengaluru",
+    "categorical__city_Delhi"
+]
