@@ -1,0 +1,16 @@
+feature,mean_absolute_shap
+numerical__satisfaction_score,0.31298599085641615
+numerical__age,0.2730870561236833
+numerical__income_per_age,0.12436813123418765
+categorical__plan_Standard,0.11763296985467028
+numerical__contract_months,0.11631661451977653
+numerical__login_frequency,0.0988720316557193
+numerical__income_log,0.09615644276791742
+numerical__tenure_years,0.07101017860588596
+categorical__plan_Premium,0.05907137968734315
+categorical__city_Delhi,0.05125468655600573
+numerical__income,0.04992319193925183
+numerical__support_calls,0.044714445241857484
+categorical__city_Bengaluru,0.03610614018093059
+categorical__city_Jaipur,0.026524823222089315
+numerical__spend_per_tenure,0.020328087627262095

@@ -1,0 +1,33 @@
+{
+    "baseline": {
+        "cv_roc_auc": 0.7435822510822511,
+        "test_metrics": {
+            "accuracy": 0.7692307692307693,
+            "precision": 0.6923076923076923,
+            "recall": 0.22784810126582278,
+            "f1": 0.34285714285714286,
+            "roc_auc": 0.7643843498273878
+        }
+    },
+    "tuning": {
+        "method": "GridSearchCV",
+        "cv_folds": 5,
+        "scoring": "roc_auc",
+        "best_parameters": {
+            "C": 0.01,
+            "l1_ratio": 0
+        },
+        "best_cv_roc_auc": 0.7472319624819626
+    },
+    "tuned_test_metrics": {
+        "accuracy": 0.7692307692307693,
+        "precision": 0.7272727272727273,
+        "recall": 0.20253164556962025,
+        "f1": 0.31683168316831684,
+        "roc_auc": 0.764499424626007
+    },
+    "comparison": {
+        "cv_roc_auc_difference": 0.003649711399711486,
+        "improved": true
+    }
+}
