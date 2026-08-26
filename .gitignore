@@ -12,3 +12,11 @@ testfile.txt
 # Log files
 logs/
 **/logs/
+
+# environment
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/

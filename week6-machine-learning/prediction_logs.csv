@@ -1,0 +1,2 @@
+timestamp,request_id,model_version,age,income,tenure_years,monthly_spend,support_calls,satisfaction_score,login_frequency,contract_months,city,plan,payment_method,prediction,churn_probability
+2026-08-25T05:58:12.662126+00:00,33b3e85e-00bc-4a7a-aaf7-4dd68484a276,v1,45.0,55000.0,5.0,70.0,3.0,6.0,20.0,12.0,Jaipur,Premium,UPI,0,0.4016569984446252

@@ -1,0 +1,72 @@
+{
+    "reference_samples": 1494,
+    "production_samples": 1,
+    "numerical_features": {
+        "age": {
+            "psi": 8.091887,
+            "status": "significant_drift"
+        },
+        "income": {
+            "psi": 8.37973,
+            "status": "significant_drift"
+        },
+        "tenure_years": {
+            "psi": 8.973404,
+            "status": "significant_drift"
+        },
+        "monthly_spend": {
+            "psi": 8.275388,
+            "status": "significant_drift"
+        },
+        "support_calls": {
+            "psi": 7.360039,
+            "status": "significant_drift"
+        },
+        "satisfaction_score": {
+            "psi": 8.301661,
+            "status": "significant_drift"
+        },
+        "login_frequency": {
+            "psi": 8.275397,
+            "status": "significant_drift"
+        },
+        "contract_months": {
+            "psi": 6.356492,
+            "status": "significant_drift"
+        }
+    },
+    "categorical_features": {
+        "city": {
+            "max_distribution_difference": 0.868139,
+            "status": "significant_drift",
+            "category_differences": {
+                "Jaipur": 0.868139,
+                "Mumbai": 0.174029,
+                "Delhi": 0.245649,
+                "Hyderabad": 0.149264,
+                "Pune": 0.125837,
+                "Bengaluru": 0.17336
+            }
+        },
+        "plan": {
+            "max_distribution_difference": 0.795181,
+            "status": "significant_drift",
+            "category_differences": {
+                "Basic": 0.35743,
+                "Standard": 0.437751,
+                "Premium": 0.795181
+            }
+        },
+        "payment_method": {
+            "max_distribution_difference": 0.578983,
+            "status": "significant_drift",
+            "category_differences": {
+                "Card": 0.295181,
+                "Wallet": 0.10241,
+                "UPI": 0.578983,
+                "NetBanking": 0.181392
+            }
+        }
+    },
+    "overall_status": "significant_drift"
+}
