@@ -1,0 +1,197 @@
+CREDIT UNDERWRITING POLICY 2024
+
+1. PURPOSE AND SCOPE
+
+Credit underwriting is the process used by a financial institution to evaluate whether a borrower is eligible to receive credit and whether the borrower is likely to repay the borrowed amount according to the agreed terms. The purpose of this Credit Underwriting Policy is to establish a consistent, transparent, and risk-controlled framework for evaluating credit applications.
+
+This policy applies to personal loans, consumer credit products, small business loans, and other approved lending products offered by the organization. All employees involved in credit assessment, approval, verification, risk management, and loan processing must follow the procedures described in this policy.
+
+The primary objective of credit underwriting is to balance business growth with responsible lending. The organization should provide credit to eligible customers while controlling the possibility of financial loss caused by defaults, fraud, inaccurate information, or excessive borrower indebtedness.
+
+All underwriting decisions must be supported by sufficient customer information and must comply with applicable organizational policies and regulatory requirements.
+
+
+2. CREDIT APPLICATION PROCESS
+
+The underwriting process begins when a customer submits a credit application. The application must contain sufficient information to identify the applicant and evaluate the applicant's financial condition.
+
+The applicant may be required to provide information including full name, date of birth, residential address, employment details, income, existing financial obligations, requested loan amount, intended loan purpose, and repayment period.
+
+Before the underwriting process continues, the organization must verify that mandatory information has been provided. Applications containing incomplete or inconsistent information may be placed on hold until the required information is obtained.
+
+Applicants must provide accurate and truthful information. If intentionally misleading or fraudulent information is discovered, the application may be rejected immediately and referred for additional investigation.
+
+Applications received through digital channels may undergo automated validation before being forwarded to the underwriting system. Automated checks can identify missing fields, invalid values, duplicate applications, or information that requires manual verification.
+
+
+3. CUSTOMER IDENTITY AND DOCUMENT VERIFICATION
+
+Identity verification is an important part of the underwriting process. The organization must establish that the person requesting credit is the legitimate applicant.
+
+Depending on the lending product and applicable requirements, customers may be asked to provide approved identity documents, address information, income documents, bank statements, employment records, or other supporting evidence.
+
+The information provided in the application should be compared with supporting documents. Significant differences between the declared information and verified information must be investigated before a final credit decision is made.
+
+Document verification is also used to reduce the risk of identity theft, application fraud, document manipulation, and misrepresentation.
+
+Applications that fail required identity verification procedures must not proceed to final approval until the issue has been resolved.
+
+
+4. INCOME AND EMPLOYMENT ASSESSMENT
+
+Income assessment determines whether the applicant has sufficient financial resources to support the requested credit facility. Underwriters must consider both the amount and stability of the applicant's income.
+
+Income may come from employment, business activities, professional services, rental income, investments, or other acceptable sources. The organization may require supporting documents to verify the reported income.
+
+Employment stability can provide additional information about the reliability of future income. Factors such as length of employment, type of employment, industry, and recent employment changes may be considered during underwriting.
+
+For self-employed applicants, additional financial information may be required because monthly income can fluctuate. Business records, tax documents, bank statements, or financial statements may be reviewed where appropriate.
+
+An applicant with high income is not automatically considered low risk. Existing debt obligations and recurring expenses must also be considered when evaluating repayment capacity.
+
+
+5. DEBT-TO-INCOME ASSESSMENT
+
+Debt-to-income ratio is one of the measures used to understand the relationship between an applicant's existing financial obligations and income.
+
+The ratio compares recurring debt payments with the applicant's income. A borrower with a large amount of existing debt relative to income may have less capacity to take on additional repayment obligations.
+
+Underwriters should review existing loans, credit card obligations, installment payments, and other relevant liabilities when assessing affordability.
+
+A high debt-to-income ratio does not always result in automatic rejection. The complete financial profile of the applicant should be considered. However, applications presenting excessive repayment burden may require additional review, a reduced loan amount, different repayment terms, or rejection.
+
+The purpose of affordability assessment is to reduce the risk that customers receive credit they cannot reasonably repay.
+
+
+6. CREDIT HISTORY AND CREDIT SCORE
+
+Credit history provides information about how an applicant has managed previous and existing credit obligations. Where available and permitted, the organization may obtain information from authorized credit reporting sources.
+
+Underwriters may consider previous repayment behavior, missed payments, defaults, outstanding balances, number of active credit accounts, recent credit inquiries, and the overall length of the applicant's credit history.
+
+A credit score may be used as one input in the underwriting decision. Higher scores generally indicate lower estimated credit risk, while lower scores may indicate greater risk.
+
+Credit score alone must not necessarily determine the final decision. Income, debt obligations, employment stability, requested loan amount, verification results, and other relevant risk indicators should also be considered.
+
+Applicants with limited credit history may require alternative evaluation methods. The absence of extensive credit history does not automatically mean that an applicant is unable to repay a loan.
+
+
+7. RISK CLASSIFICATION
+
+After collecting and verifying relevant information, the underwriting system may assign the applicant to a risk category.
+
+Applicants may be classified into categories such as low risk, moderate risk, or high risk. The classification helps determine whether additional verification, manual review, adjusted pricing, or other risk controls are required.
+
+Low-risk applicants generally demonstrate stable income, manageable existing obligations, satisfactory repayment history, and successful verification.
+
+Moderate-risk applicants may have some weaker characteristics but still demonstrate reasonable repayment capacity. These applications may require additional documentation or manual review.
+
+High-risk applicants may demonstrate significant repayment concerns, excessive debt obligations, serious negative credit history, inconsistent information, or other material risk indicators.
+
+Risk classification should be based on documented underwriting criteria and should be applied consistently across comparable applications.
+
+
+8. AUTOMATED AND MANUAL UNDERWRITING
+
+The organization may use automated systems to support credit underwriting. Automated underwriting can improve processing speed and consistency by evaluating predefined rules, calculated risk indicators, and approved scoring models.
+
+An automated system may approve, reject, or refer an application for manual review depending on the configured underwriting rules.
+
+Manual review is required when an application contains unusual circumstances, conflicting information, insufficient documentation, borderline risk indicators, or conditions that cannot be adequately evaluated through automated rules.
+
+Underwriters conducting manual reviews must document significant observations and explain the basis for their recommendation or decision.
+
+Automated decisions and manual decisions should both follow the organization's approved credit policy. Employees must not intentionally bypass underwriting controls in order to approve an otherwise ineligible application.
+
+
+9. LOAN AMOUNT AND REPAYMENT TERMS
+
+Approval of an applicant does not automatically mean that the full requested loan amount must be granted.
+
+The approved amount should reflect the applicant's repayment capacity, risk profile, income, existing obligations, and the organization's applicable product limits.
+
+An underwriter may recommend a lower loan amount when the requested amount creates an excessive repayment burden. Repayment duration may also be adjusted where permitted by the lending product.
+
+Interest rates, fees, repayment schedules, and other terms must be communicated according to applicable policies before the customer accepts the credit facility.
+
+Customers should be provided with sufficient information to understand their repayment responsibilities.
+
+
+10. APPLICATION DECISIONS
+
+After completing the required checks, an application may receive one of several outcomes.
+
+An application may be approved when the applicant satisfies the required underwriting criteria and the identified risk is within acceptable limits.
+
+An application may be conditionally approved when additional information, documentation, verification, or another requirement must be completed before the credit facility can be finalized.
+
+An application may be referred for manual review when the automated system cannot make an appropriate final decision.
+
+An application may be rejected when the applicant does not satisfy required eligibility or risk criteria.
+
+The reason for the decision should be recorded in the underwriting system. Decision records help support internal review, auditability, monitoring, and future improvements to underwriting procedures.
+
+
+11. FRAUD AND SUSPICIOUS APPLICATIONS
+
+Credit underwriting must include appropriate controls for detecting potentially fraudulent applications.
+
+Warning indicators may include inconsistent identity information, manipulated documents, unusual application patterns, conflicting employment information, suspicious contact details, or repeated applications using related information.
+
+The presence of a warning indicator does not necessarily prove fraud. Applications should be reviewed according to established fraud investigation procedures.
+
+Employees should not ignore significant inconsistencies merely because other credit indicators appear satisfactory.
+
+Applications confirmed to involve fraudulent information may be rejected and handled according to the organization's fraud management procedures.
+
+
+12. EXCEPTIONS AND ESCALATION
+
+There may be situations where an application does not satisfy a standard underwriting rule but has other characteristics that justify additional consideration.
+
+Any exception to standard underwriting requirements must follow an approved exception process. The employee requesting the exception should document the reason and provide relevant supporting information.
+
+Exceptions should be reviewed by personnel with appropriate approval authority. An underwriter must not approve their own unauthorized exception.
+
+Repeated exceptions involving the same underwriting rule should be monitored because they may indicate that the rule requires review or that underwriting controls are being applied inconsistently.
+
+High-risk or unusual applications may also be escalated to senior credit personnel or the risk management team.
+
+
+13. DATA PRIVACY AND SECURITY
+
+Credit applications contain sensitive customer and financial information. Employees and systems involved in underwriting must handle this information according to applicable data protection and information security requirements.
+
+Customer information should only be accessed when required for legitimate business purposes.
+
+Credit information must not be shared with unauthorized individuals. Documents and underwriting records should be stored using approved systems and protected against unauthorized access, modification, disclosure, or loss.
+
+Where third-party services are used for identity verification, credit information, fraud detection, or other underwriting activities, customer information should be exchanged only through approved mechanisms.
+
+
+14. MONITORING AND QUALITY REVIEW
+
+The organization should periodically monitor underwriting decisions to determine whether the credit process continues to operate effectively.
+
+Monitoring may include approval rates, rejection rates, default rates, manual review rates, policy exceptions, fraud indicators, and performance across different lending products.
+
+Quality reviews may examine individual applications to confirm that underwriters followed required procedures and documented their decisions appropriately.
+
+Unexpected increases in defaults or underwriting exceptions should be investigated. Risk models and underwriting rules may require adjustment when customer behavior, economic conditions, lending products, or organizational risk appetite changes.
+
+Changes to underwriting rules should be documented, reviewed, tested, and approved before being introduced into production systems.
+
+
+15. POLICY REVIEW AND GOVERNANCE
+
+The Credit Underwriting Policy should be reviewed periodically to ensure that it remains appropriate for the organization's products, customers, risk environment, and regulatory responsibilities.
+
+Responsibility for maintaining the policy should be assigned to an appropriate credit or risk management function.
+
+Material changes to underwriting criteria should receive appropriate approval before implementation.
+
+Employees involved in underwriting should receive sufficient training to understand current requirements. Updated procedures should be communicated when material policy changes occur.
+
+The organization should maintain appropriate records of policy versions, approvals, implementation dates, and significant changes.
+
+The 2024 Credit Underwriting Policy is intended to provide a consistent foundation for responsible lending. Effective underwriting requires accurate information, appropriate verification, assessment of repayment capacity, consideration of credit history, controlled decision-making, fraud awareness, proper documentation, and ongoing monitoring.
