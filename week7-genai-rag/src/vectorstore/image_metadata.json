@@ -1,0 +1,26 @@
+[
+    {
+        "image_id": "employee_leave_policy",
+        "source": "employee_leave_policy.png",
+        "file_type": ".png",
+        "ocr_text": "Our leave policy supports your well-being and work-life balance.\ni.\n\nWy, EMPLOYEE LEAVE POLICY\n\nLEAVE TYPE ELIGIBILITY DURATION DESCRIPTION\n\nAll 24 days Paid time off for rest,\n\nPaternity Leave 15 days\n\nEmployees becoming fathers.\n\nae Annual Leave travel, or personal\ner year\nra Employees per y matters:\nPaid leave for illness\neS Sick Leave E i weidays or medical\nmpm yee? pemycer appointments.\nAll 12 days Paid leave for urgent\nCasual Leave Employees penveay personal work or\nshort-term needs.\nFemale Paid leave for\nMaternity Leave 26 weeks childbirth and\nEmployees\npostnatal care.\n6 Male Paid leave for newly\n(ZY\n\nPOLIC IDELINES\n\nApply for leave oOo Manager Leave cannot be Policy is subject\nin advance (a@ny) approval is availed for past to change as per\nwhenever required. dates. company rules.\npossible.\n\n«46\nI\n\ni) For more details, please refer to the Employee Handbook or contact HR.",
+        "caption": "employee pay pay chart",
+        "path": "/home/mayank/full-stack_launchpad/week7-genai-rag/src/data/images/employee_leave_policy.png"
+    },
+    {
+        "image_id": "sales_dashboard",
+        "source": "sales_dashboard.png",
+        "file_type": ".png",
+        "ocr_text": "@D Dashboard SALES DASHBOARD 6 May 1 - May 31, 2024 v\n\nOverview of sales performance\n\nOverview\nTOTAL sates a TOTAL onoERS a ‘AVERAGE ORDER VALUE 2 NeW CUSTOMERS A Petumine custouses\n$98,543 1,245 $79.21 256 “1,032\n112.5% vs Apr 4 8A vs Aor 11 3.6% vs Aor 11 18.% vs Apr 1 67% vs Aor\n\nProducts\n\nPe ee, er | jamie es RPA 4 er Ne~ |\n\nCustomers\nSALES OVER TIME Daily v SALES BY CATEGORY SALES BY REGION\nReports\nspo © Electronics\ni $38,450 (39%) x A\nSettings eae ¢\n© Clothing\n$60 $23,650 (24%) y\n© Home & kitchen\n40K $18,760 (199%\n© Beauty Noth Ancico ED $42,250\n$20K =a\n$10:290,(10%) Europe — $22,310\na > Others Asia — $18,450\n$7,853 (8%)\nMay! May May) May16.=— May21. = May26-— May 31 South America => $9,230\nArica -_ $6,303\nToP PRODUCTS. RECENT ORDERS. GATES BYiPAY MENTIMETHOD:\nProduct sales Orders Order 10 Customer Date Amount status\n0 Wireless Headphones $15,430 210 #ORD-1045 John Smith May 31, 2024 $185.40 Delivered\n© Credit Card\n$55,620 (56%)\n6 ‘Smart Watch $12.70 158 #ORD-1044 Sarah Johnson May 31, 2024 $245.00 Shipped\n© PayPal\n$24,310 (25%)\n6 Bluetooth Speaker $9,860 126 #ORD-1043 Michael Brown May 30, 2024 $120.30 Processing\n© Debit card\nMy ming shoes $7520 %6 #ORD-1042 Emily D May 30, 2024 $310.75 Delivered $12,450 013%)\n@ Bank Transfer\na Backpack $6,230 8 #ORD-1041 Daniel Wilson May 29, 2024 $98.60 Cancelled $6,163 (6%)",
+        "caption": "a dashboard showing the dashboards of various businesses",
+        "path": "/home/mayank/full-stack_launchpad/week7-genai-rag/src/data/images/sales_dashboard.png"
+    },
+    {
+        "image_id": "loan_approval_process",
+        "source": "loan_approval_process.png",
+        "file_type": ".png",
+        "ocr_text": "LOAN APPROVAL PROCESS\n\nA step-by-step overview of the loan approval workflow\n\nAPPLICATION\n\nApplicant submits\nthe loan application\nwith required\ndocuments.\n\nf2)\n\nDOCUMENT\nVERIFICATION\n\nv—\n\nv=\n\n<9\nVerify identity,\n\naddress, income\n\ndocuments and\nother details.\n\n(3)\n\nCREDIT\nASSESSMENT\n\nOr\n\nEvaluate credit score,\ncredit history and\nrepayment capacity.\n\n4)\n\nRISK\nEVALUATION\n\n4)\n\nAssess the risk\ninvolved and\n\nverify information.\n\nts)\n\nLOAN\nDECISION\n\nApprove or reject\nthe loan based on\nevaluation results.\n\nLOAN DISBURSEMENT\n\nDisburse the loan amount\nto the applicant.\n\nAPPROVED?\n\n?\n\nx)\n\nAPPLICATION REJECTED\n\nInform the applicant\nabout the rejection.\n\nThe process may vary slightly based on the bank’s policies and the type of loan.",
+        "caption": "loan process diagram",
+        "path": "/home/mayank/full-stack_launchpad/week7-genai-rag/src/data/images/loan_approval_process.png"
+    }
+]
