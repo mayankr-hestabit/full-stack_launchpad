@@ -138,13 +138,15 @@ def run_sql_qa(question):
         results = execute_sql(validated_sql)
 
     if not results:
-        print("No results found.")
-        return
+      return {
+          "question": question,
+          "sql": validated_sql,
+          "results": [],
+          "answer": "No results found."
+      }
 
     for row in results:
         print(row)
-
-    print("\n========== FINAL ANSWER ==========")
 
     answer = summarize_results(
         question,
@@ -152,7 +154,12 @@ def run_sql_qa(question):
         results
     )
 
-    print(answer)
+    return {
+        "question": question,
+        "sql": validated_sql,
+        "results": results,
+        "answer": answer
+    }
 
 
 if __name__ == "__main__":

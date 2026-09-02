@@ -1,0 +1,22 @@
+[
+    {
+        "role": "assistant",
+        "content": "Based on the provided context, there is no single comprehensive document titled \"Employee Policy.\" However, the context outlines the following specific policies and rules applicable to employees:\n\n* **Credit Underwriting Policy 2024:** \n  * All employees involved in credit assessment, approval, verification, risk management, and loan processing must follow the procedures described in the Credit Underwriting Policy 2024.\n  * Employees involved in underwriting must receive sufficient training to understand current requirements.\n\n* **Leave Policy:** \n  * **Paid Leave:** Employees are entitled to 24 paid leave days per year. Interns are entitled to 12 paid leave days during their internship period.\n  * **Leave Requests:** Planned leave requests must be submitted at least five working days in advance. Emergency leave can be requested without prior notice."
+    },
+    {
+        "role": "user",
+        "content": "what is the employee leave policy"
+    },
+    {
+        "role": "assistant",
+        "content": "Based on the provided context, the employee leave policy includes:\n\n* **Paid Leave:** Employees are entitled to 24 paid leave days per year. Interns are entitled to 12 paid leave days during their internship period.\n* **Planned Leave:** Requests for planned leave must be submitted at least five working days in advance.\n* **Emergency Leave:** Can be requested without prior notice."
+    },
+    {
+        "role": "user",
+        "content": "what about interns"
+    },
+    {
+        "role": "assistant",
+        "content": "Based on the provided context, interns are entitled to 12 paid leave days during their internship period."
+    }
+]

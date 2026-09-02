@@ -64,8 +64,7 @@ src/
 │   └── sql_pipeline.py
 │
 ├── utils/
-│   ├── schema_loader.py
-│   └── setup_database.py
+│   └── schema_loader.py
 │
 └── SQL-QA-DOC.md
 ```
