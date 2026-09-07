@@ -1,0 +1,60 @@
+DAY 1
+LLM Architecture
+Tokenization
+Pretraining vs instruction tuning
+Fine-tuning concepts
+LoRA/PEFT fundamentals
+Instruction dataset
+Token analysis
+Outlier removal
+
+              ↓
+
+DAY 2
+PEFT
+LoRA
+QLoRA
+Rank
+Alpha
+Dropout
+BitsAndBytes
+Gradient checkpointing
+Mixed precision
+Fine-tune model
+
+              ↓
+
+DAY 3
+Quantization
+FP16
+INT8
+INT4
+GGUF
+llama.cpp
+Compare memory/speed/quality
+
+              ↓
+
+DAY 4
+Inference optimization
+KV cache
+vLLM
+llama.cpp
+Batching
+Streaming
+Speculative decoding
+Prompt compression
+Benchmarking
+
+              ↓
+
+DAY 5
+FastAPI LLM server
+/generate
+/chat
+Streaming
+Generation controls
+Model caching
+Logging
+Request IDs
+RAG/agent readiness
