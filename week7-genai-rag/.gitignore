@@ -1,0 +1,21 @@
+# Environment variables
+.env
+
+# Local notes
+files.md
+
+# Python virtual environment
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+logs/
+**/logs/

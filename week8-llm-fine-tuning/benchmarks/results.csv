@@ -1,0 +1,38 @@
+model,prompt_id,prompt,latency_sec,tokens_per_sec,vram_gb,correct,response
+Base Qwen FP16,1,Explain Docker containers in simple terms.,4.075643040000159,19.6288043910727,2.8916378021240234,1,"Docker is a platform that allows you to package your application and its dependencies into a lightweight, portable container. Here's how it works:
+
+1. **Container**: A Docker container is like a virtual machine but much smaller and more efficient. It runs on top of the host operating system (OS) and provides an isolated environment for your application.
+
+2. **Image**: Before running, each container starts"
+Base Qwen FP16,2,What is GitHub?,3.1693177910001396,25.242025342859183,2.8914546966552734,1,"GitHub is an online platform that allows developers to store and share code for software projects. It was founded in 2008 by Tom Preston-Werner, Justin Rosenstein, and Ben Johnson.
+
+Key features of GitHub include:
+
+1. Version control: Allows users to track changes made to their code over time.
+2. Collaboration tools: Enables multiple people to work on the same project simultaneously.
+3."
+Base Qwen FP16,3,What is an API?,3.015121480000289,26.532927621872247,2.891500473022461,1,"An API (Application Programming Interface) is a set of rules and protocols that allows different software applications to communicate with each other. It defines the functions and data formats that one application can use to interact with another.
+
+Here are some key points about APIs:
+
+1. Purpose: APIs enable developers to integrate third-party services into their own applications without having to write custom code for every interaction.
+
+2. Data exchange"
+Base Qwen FP16,4,What does HTTP stand for?,0.8699248749999242,26.43906463762403,2.8889331817626953,1,HTTP stands for Hypertext Transfer Protocol. It is the standard protocol used to transfer web pages over the internet.
+Base Qwen FP16,5,What is a Python list?,3.958159458999944,20.211414125345154,2.8915462493896484,1,"A Python list is an ordered collection of items that can be accessed using indexes. It's one of the most commonly used data structures in Python and allows for dynamic modification.
+
+Here are some key points about lists:
+
+1. **Ordered**: The elements in a list have a specific order, which makes them useful when you need to maintain the sequence of operations or data.
+
+2. **Mutable**: Lists can"
+Fine-tuned Qwen + LoRA FP16,1,Explain Docker containers in simple terms.,1.2905721759998414,13.172451968313695,2.9691543579101562,1,A Docker container is an isolated running or stopped instance of a Linux container image.
+Fine-tuned Qwen + LoRA FP16,2,What is GitHub?,2.0216929739999614,12.860508660006104,2.968843460083008,1,GitHub is a web-based version control platform that stores software source code and lets multiple developers work collaboratively on the same project.
+Fine-tuned Qwen + LoRA FP16,3,What is an API?,1.650800345999869,12.721102252544394,2.9689207077026367,1,An API is a set of defined methods for requesting and receiving data over a network or application layer.
+Fine-tuned Qwen + LoRA FP16,4,What does HTTP stand for?,0.9157001959997615,9.828544363446161,2.968998908996582,1,HTTP stands for Hypertext Transfer Protocol.
+Fine-tuned Qwen + LoRA FP16,5,What is a Python list?,1.0691693190001388,13.094277726836063,2.968998908996582,1,A Python list is an ordered collection that can store multiple values.
+GGUF Q4_0,1,Explain Docker containers in simple terms.,27.33929517899969,6.1,0.0,1,A Docker container is an isolated running instance of a container image.
+GGUF Q4_0,2,What is GitHub?,10.618863752999914,7.4,0.0,1,GitHub is a web-based version control service that lets developers collaborate on projects through Git repositories and pull requests.
+GGUF Q4_0,3,What is an API?,8.177920089000054,7.4,0.0,1,An API is a set of defined methods and parameters for requesting and manipulating resources over a network.
+GGUF Q4_0,4,What does HTTP stand for?,6.646117695000157,7.4,0.0,1,HTTP stands for Hypertext Transfer Protocol and is used to transfer resources over the internet.
+GGUF Q4_0,5,What is a Python list?,7.4934828199998265,7.4,0.0,1,"A Python list is an ordered, mutable collection that can store multiple values."

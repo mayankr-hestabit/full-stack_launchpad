@@ -1,1 +1,45 @@
-[]
+[
+    {
+        "timestamp": "2026-09-02T16:20:52.398089",
+        "endpoint": "/ask",
+        "question": "how many paid leave days for employee",
+        "answer": "Based on the provided context, employees are entitled to 24 paid leave days per year.",
+        "evaluation": {
+            "context_match_score": 0.8,
+            "faithfulness_score": 0.727,
+            "hallucination_detected": false,
+            "confidence_score": 0.764
+        }
+    },
+    {
+        "timestamp": "2026-09-02T16:21:27.000713",
+        "endpoint": "/ask",
+        "question": "what about interns",
+        "answer": "Based on the provided context, interns are entitled to 12 paid leave days during their internship period.",
+        "evaluation": {
+            "context_match_score": 0.5,
+            "faithfulness_score": 0.769,
+            "hallucination_detected": false,
+            "confidence_score": 0.635
+        }
+    },
+    {
+        "timestamp": "2026-09-02T16:22:56.834369",
+        "endpoint": "/ask-image",
+        "question": "explain loan approval process",
+        "answer": "Based on the provided image context (Source 1: `loan_approval_process.png`), the **Loan Approval Process** follows these steps:\n\n1. **Application:** The applicant submits the loan application along with the required documents.\n2. **Document Verification:** Identity, address, income documents, and other details are verified.\n3. **Credit Assessment:** The applicant's credit score, credit history, and repayment capacity are evaluated.\n4. **Risk Evaluation:** The risk involved is assessed, and information is verified.\n5. **Loan Decision:** A decision is made to approve or reject the loan based on the evaluation results:\n   * **If Approved:** **Loan Disbursement** takes place, where the loan amount is disbursed to the applicant.\n   * **If Rejected:** **Application Rejected**, and the applicant is informed about the rejection.\n\n*(Note: The process may vary slightly depending on the bank's policies and the type of loan.)*",
+        "evaluation": {
+            "context_match_score": 0.75,
+            "faithfulness_score": 0.746,
+            "hallucination_detected": false,
+            "confidence_score": 0.748
+        }
+    },
+    {
+        "timestamp": "2026-09-02T16:23:56.888206",
+        "endpoint": "/ask-sql",
+        "question": "what are the total sales in 2024",
+        "answer": "The total sales in 2024 were 49,120.0.",
+        "evaluation": null
+    }
+]
