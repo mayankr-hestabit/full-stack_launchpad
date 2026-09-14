@@ -1,0 +1,76 @@
+FROM python:3.12-slim
+
+
+# ---------------------------------------------------------
+# SYSTEM DEPENDENCIES
+# ---------------------------------------------------------
+
+RUN apt-get update && apt-get install -y \
+    git \
+    cmake \
+    build-essential \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+
+# ---------------------------------------------------------
+# BUILD LLAMA.CPP
+# ---------------------------------------------------------
+
+WORKDIR /root
+
+RUN git clone --depth 1 https://github.com/ggerganov/llama.cpp.git
+
+WORKDIR /root/llama.cpp
+
+RUN cmake -B build \
+    && cmake --build build --config Release -j2
+
+
+# ---------------------------------------------------------
+# APPLICATION
+# ---------------------------------------------------------
+
+WORKDIR /app
+
+COPY deploy /app/deploy
+COPY quantized/model.gguf /app/quantized/model.gguf
+
+
+# ---------------------------------------------------------
+# PYTHON DEPENDENCIES
+# ---------------------------------------------------------
+
+RUN pip install --no-cache-dir \
+    fastapi \
+    uvicorn \
+    httpx \
+    pydantic \
+    streamlit
+
+
+# ---------------------------------------------------------
+# ENVIRONMENT VARIABLES
+# ---------------------------------------------------------
+
+ENV GGUF_MODEL_PATH=/app/quantized/model.gguf
+ENV LLAMA_SERVER_BIN=/root/llama.cpp/build/bin/llama-server
+ENV PYTHONUNBUFFERED=1
+
+
+# ---------------------------------------------------------
+# PORTS
+# ---------------------------------------------------------
+
+# FastAPI
+EXPOSE 8000
+
+# Streamlit
+EXPOSE 8501
+
+
+# ---------------------------------------------------------
+# START FASTAPI + STREAMLIT
+# ---------------------------------------------------------
+
+CMD ["sh", "-c", "uvicorn deploy.app:app --host 0.0.0.0 --port 8000 & streamlit run deploy/streamlit_app.py --server.address=0.0.0.0 --server.port=8501"]
