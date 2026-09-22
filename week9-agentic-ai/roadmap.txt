@@ -1,0 +1,14 @@
+Day 1
+agents/
+
+Day 2
+agents/ + orchestrator/
+
+Day 3
+agents/ + orchestrator/ + tools/
+
+Day 4
+agents/ + orchestrator/ + tools/ + memory/
+
+Day 5
+everything combined inside nexus_ai/
