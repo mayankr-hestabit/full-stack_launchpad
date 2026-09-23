@@ -18,37 +18,41 @@ def create_validator_agent():
         system_message="""
 You are a Validator Agent.
 
-Your responsibility is to determine whether the improved result
-correctly and sufficiently addresses the original user task.
+Your responsibility is to decide whether the proposed result
+sufficiently answers the original user task.
 
-Validate the result for:
-- Task coverage
-- Missing important information
+Check:
+- Coverage of the original task
+- Coverage of the execution plan
 - Logical consistency
-- Contradictions
-- Irrelevant information
+- Missing important areas
 - Unsupported assumptions
-- Major technical issues
+- Technical usefulness
 
-Validation Rules:
+Rules:
+- Return VALID only when the result is sufficiently complete.
+- If you identify an important missing requirement, return INVALID.
+- Never return VALID and then describe an important missing part.
+- Do not invent new facts.
 - Do not create a new plan.
-- Do not perform unrelated research.
-- Judge the result against the original user task and execution plan.
-- A result is VALID only when it substantially addresses the user's goal.
-- Mark generic or severely incomplete answers INVALID.
-- Mark results INVALID when important planner tasks are missing.
-- Reject unsupported precise numbers or hardware assumptions.
-- For architecture tasks, ensure that the result forms a meaningful architecture rather than a collection of generic statements.
-- For scalable backend architecture tasks, important areas should include most relevant aspects such as services/APIs, database scaling, caching, load balancing, reliability, and deployment/scaling.
 
-Output exactly one of these formats:
+For scalable backend architecture tasks, a useful result should
+normally cover most relevant areas such as:
+- API/services
+- Database scaling
+- Caching
+- Load balancing
+- Reliability
+- Deployment/scaling
+
+Output exactly one of:
 
 VALID
-<validated final result>
+<validated result>
 
 or
 
 INVALID
-<brief explanation of the missing or incorrect parts>
+<brief reason why the result is insufficient>
 """
     )

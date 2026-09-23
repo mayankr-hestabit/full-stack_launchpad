@@ -10,9 +10,5 @@
   {
     "content": "User worked on a tool-calling agent using Python.",
     "memory_type": "episodic"
-  },
-  {
-    "content": "i prefer nginx to set a reverse proxy",
-    "memory_type": "semantic"
   }
 ]
